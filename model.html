@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modle | PYV</title>
+    <link rel="shortcut icon" href="pic/pyv-favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="font/font.css">
+    <style>
+        .user_related a {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #888888;
+            text-decoration: none;
+            margin: 0px 5px;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .header_wrap {
+            display: flex;
+            padding: 10px 30px;
+            background-image: url(pic/header-bgimg.png);
+            background-size: cover;
+            border-bottom: #afafaf 3px solid;
+        }
+
+        .header_wrap>a {
+            width: 95px;
+        }
+
+        .header_wrap img {
+            width: 100%;
+        }
+
+        .header_wrap nav {
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+        }
+
+        .header_wrap nav a {
+            font-size: 18px;
+            text-decoration: none;
+            font-family: "NotoSerifTC-Regular";
+            text-shadow: 0.05em 0.05em #cac9c9;
+            color: #423838;
+            padding: 0px 10px;
+        }
+
+        .search {
+            width: 30%;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 7px 0.3px #423838;
+            -webkit-box-shadow: 0px 0px 7px 0.3px #423838;
+            -moz-box-shadow: 0px 0px 7px 0.3px #423838;
+            -o-box-shadow: 0px 0px 7px 0.3px #423838;
+        }
+
+        .search_wrap {
+            display: flex;
+            padding: 3px 5px;
+        }
+
+        .search_img {
+            max-width: 6%;
+            padding: 5px;
+            border: none;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .search img {
+            width: 100%;
+        }
+
+        .search_text {
+            width: 100%;
+            flex-grow: 1;
+            font-size: 18px;
+            font-family: "NotoSerifTC-Bold";
+            color: #766e6d;
+            border: none;
+            outline: none;
+        }
+
+        .search select {
+            background-color: #e0e0e0;
+            border: #e0e0e0 1px solid;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: "NotoSerifTC-Regular";
+            outline: none;
+            padding: 0px 5px;
+            margin: 0px 10px;
+        }
+
+        .modelpart {
+            background-image: url(pic/bgimg.png);
+            background-size: cover;
+        }
+
+        .modelpart_wrap {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            padding-top: 100px;
+        }
+
+        .model_set {
+            width: 80%;
+            background: #fff;
+            box-sizing: border-box;
+            margin-right: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+        }
+
+
+        .author_img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .author_img img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .author_info {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            border-bottom: solid 1px #afafaf;
+        }
+
+        .author_info .info h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+
+        .author_info .info p {
+            color: #afafaf;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 12px;
+        }
+
+        .model_img {
+            max-height: 600px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .model_img img {
+            height: 100%;
+        }
+
+        .model_img_attached {
+            width: 100%;
+            position: relative;
+        }
+
+        .model_img_attached ul {
+            display: flex;
+            border-top: solid 1px #afafaf;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .model_img_attached ul li {
+            display: flex;
+            max-height: 100px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .model_img_attached ul li img {
+            width: 100%;
+            max-height: 100%;
+        }
+
+        .model_img_attached ul li img:hover {
+            cursor: pointer;
+            border: solid 2px #766e6d;
+        }
+
+        .model_img_attached .arrow_before {
+            width: 45px;
+            height: 45px;
+            opacity: 0.3;
+            background-color: #423838;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            top: 35%;
+            left: 0%;
+        }
+
+        .model_img_attached .arrow_before p {
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .model_img_attached .arrow_after {
+            width: 45px;
+            height: 45px;
+            background-color: #423838;
+            opacity: 0.3;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            top: 35%;
+            right: 0%;
+        }
+
+        .model_img_attached .arrow_after p {
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .model_img_attached .arrow_before:hover,
+        .model_img_attached .arrow_after:hover {
+            opacity: 1;
+        }
+
+        .model_function {
+            width: 20%;
+            margin-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .model_function_wrap {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .model_function p {
+            color: #766e6d;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .model_function h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            line-height: 26px;
+            text-align: center;
+        }
+
+        .model_function_wrap .dow,
+        .model_function_wrap .share,
+        .model_function_wrap .comment,
+        .model_function_wrap .link,
+        .model_function_wrap .like {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .model_function_wrap .descri {
+            padding: 0px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .model_function_wrap a {
+            text-decoration: none;
+        }
+
+        .model_function_wrap img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .model_description {
+            width: 1200px;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+        }
+
+        .model_description h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+
+        .model_description p {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        .model_comment>h2 {
+            text-align: center;
+            padding: 30px 0px 20px 0px;
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+        }
+
+        .model_comment a {
+            text-decoration: none;
+            color: #9093AB;
+        }
+
+        .model_comment_wrap {
+            width: 1200px;
+            margin: auto;
+            padding: 20px 0px 20px 0px;
+            box-sizing: border-box;
+        }
+
+        .model_comment .comment {
+            padding: 20px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+        }
+
+        .member_img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .member_img img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .member_info {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .member_info .info h2 {
+            color: #423838;
+            line-height: 30px;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+        }
+
+        .member_info .info p {
+            color: #afafaf;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 12px;
+        }
+
+        .txt {
+            height: 50px;
+            padding: 15px 0px 15px 0px;
+            border-bottom: solid 1px #afafaf;
+        }
+
+        .txt p {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+        }
+
+        .replies {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+
+        .replies h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+        }
+
+        .replies a {
+            text-decoration: none;
+        }
+
+        .footer {
+            background-image: url(pic/bgimg.png);
+            background-size: cover;
+            border-top: #afafaf 3px solid;
+        }
+
+        .footer_wrap {
+            width: 1200px;
+            display: flex;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 10px 0px;
+
+        }
+
+        .service {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service h3,
+        .help h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .service a,
+        .help a {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 0px;
+        }
+
+        .help {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column
+        }
+
+        .peoplesaid {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .peoplesaid_wrap {
+            display: flex;
+            align-items: center;
+            width: 80%;
+        }
+
+        .peoplesaid h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .peoplesaid p {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .peoplesaid h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .right_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .left_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .focusus {
+            width: 25%;
+        }
+
+        .focusus h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .focusus a img {
+            width: 25px;
+            height: 25px;
+            padding-right: 10px;
+        }
+
+
+        .copyright {
+            background-color: rgb(77, 77, 77);
+        }
+
+        .copyright_wrap {
+            width: 1200px;
+            margin: auto;
+            padding: 5px 0px;
+        }
+
+        .copyright_wrap p {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_wrap">
+            <a href="index.html"><img src="pic/pyv-logo.png" alt="pyv">
+            </a>
+            <nav>
+                <a href="#">熱門模型</a>
+                <a href="#">模型分類</a>
+                <a href="#">作者排名</a>
+                <a href="#">代課建模與代印</a>
+                <a href="#">關於我們</a>
+            </nav>
+            <div class="search">
+                <div class="search_wrap">
+                    <input type="text" class="search_text" placeholder="搜尋世上最美好的模型">
+                    <select>
+                        <option>搜模型</option>
+                        <option>搜作者</option>
+                        <option>搜挑戰</option>
+                    </select>
+                    <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                </div>
+            </div>
+            <div class="user_related">
+                <a href="#">會員</a>
+                <a href="#">發布作品</a>
+                <a href="#">購物車</a>
+                <a href="#">聯絡我們</a>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <section class="modelpart">
+        <div class="modelpart_wrap">
+            <div class="model_set">
+                <div class="author_info">
+                    <div class="author_img"><a href="author.html"><img src="pic/logo_model.png"></a></div>
+                    <div class="info">
+                        <h2>鋼鐵人頭盔(可穿戴)</h2>
+                        <p>by Boxandloop 2020/10/21</p>
+                    </div>
+                </div>
+                <div class="model_img">
+                    <img src="pic/IronMan.jpg">
+                </div>
+                <div class="model_img_attached">
+                    <a href="#">
+                        <div class="arrow_before">
+                            <p>&lt;</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="arrow_after">
+                            <p>&gt;</p>
+                        </div>
+                    </a>
+                    <ul>
+                        <li><img src="pic/IronMan.jpg"></li>
+                        <li><img src="pic/IronMan-2.jpg"></li>
+                        <li><img src="pic/IronMan-3.jpg"></li>
+                        <li><img src="pic/IronMan-4.jpg"></li>
+                        <li><img src="pic/IronMan-5.jpg"></li>
+                        <li><img src="pic/IronMan-6.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="model_function">
+                <div class="model_function_wrap">
+                    <a href="#">
+                        <div class="dow"><img src="pic/download.png">
+                            <div class="descri">
+                                <p>1335</p>
+                                <h3>下載檔案</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="like"><img src="pic/collection.png">
+                            <div class="descri">
+                                <p>254</p>
+                                <h3>加入收藏</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="comment"><img src="pic/bubble-chat.png">
+                            <div class="descri">
+                                <p>3</p>
+                                <h3>會員評論</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="link"><img src="pic/link.png">
+                            <div class="descri">
+                                <h3>複製連結</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="share"><img src="pic/share.png">
+                            <div class="descri">
+                                <h3>分享至社群</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="model_description">
+            <h2>模型詳情</h2>
+            <p>2020/09/12上傳更新:</p>
+            <p>增加了接線影片更新眼睛在面罩關閉時閃爍和面罩打開時閃爍的原始碼稍微更新以調整大小說明。 伺服馬達安裝座應僅在 X 軸上縮放。</p>
+            <br>
+            <p>2020/11/05上傳更新:</p>
+            <p>增加了一個由兩部分組成的尺寸環。用在200x200 毫米的床上平台列印。 將兩個部分黏起後測量尺寸。</p>
+            <br>
+            <p>2020/11/01上傳更新:</p>
+            <p>增加了了可選的眼睛（可調光）。<br>現在有 2 個 PDF 說明。 一種是帶眼睛的頭盔，一種是沒有的。</p>
+            <br>
+            <p>這個模型是易於易於列印，易於構建。其中我們提供包括零件清單、接線圖和運行的 Arduino 代碼。隨附調整大小和組裝說明</p>
+        </div>
+        <div class="model_comment">
+            <h2>請<a href="#">登入</a>後再發表評論</h2>
+            <div class="model_comment_wrap">
+                <div class="comment">
+                    <div class="member_info">
+                        <div class="member_img"><a href="author.html"><img src="pic/author3.PNG"></a></div>
+                        <div class="info">
+                            <h2>JOSH-DC</h2>
+                            <p>2020/12/21</p>
+                        </div>
+                    </div>
+                    <div class="txt">
+                        <p>很棒的模型，設計得很精準。</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="member_info">
+                        </a>
+                        <div class="member_img"><a href="author.html"><img src="pic/author6.PNG"></a></div>
+                        <div class="info">
+                            <h2>3DPropz</h2>
+                            <p>2020/12/10</p>
+                        </div>
+                    </div>
+                    <div class="txt">
+                        <p>看起來相當準確的模型，感謝分享!</p>
+                    </div>
+                    <div class="replies"><a href="#">
+                            <h3>2則回覆</h3>
+                        </a></div>
+                </div>
+                <div class="comment">
+                    <div class="member_info">
+                        <div class="member_img"><a href="author.html"><img src="pic/author2.PNG"></a></div>
+                        <div class="info">
+                            <h2>Mave3Dprints</h2>
+                            <p>2020/11/25</p>
+                        </div>
+                    </div>
+                    <div class="txt">
+                        <p>看起來超讚，迫不及待印出成品了!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        <div class="footer_wrap">
+            <div class="service">
+                <h3>服務</h3>
+                <a href="#">熱門模型</a>
+                <a href="#">模型分類</a>
+                <a href="#">作者排名</a>
+                <a href="#">代課鍵模與代印</a>
+                <a href="#">關於我們</a>
+            </div>
+            <div class="help">
+                <h3>幫助</h3>
+                <a href="#">聯絡我們</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="peoplesaid">
+                <div class="peoplesaid_wrap">
+                    <div class="left_line"></div>
+                    <h2>其他人都說了什麼</h2>
+                    <div class="right_line"></div>
+                </div>
+                <p>在PYV買了幾個3D模型，<br>是一個很好的選擇也擁有很棒的品質。</p>
+                <h3>kreem Daniel</h3>
+            </div>
+            <div class="focusus">
+                <h3>關注我們</h3>
+                <a href="#"><img src="pic/line.png"></a>
+                <a href="#"><img src="pic/facebook.png"></a>
+                <a href="#"><img src="pic/instagram.png"></a>
+                <a href="#"><img src="pic/youtube.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="copyright_wrap">
+            <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
+        </div>
+    </div>
+</body>
+
+</html>

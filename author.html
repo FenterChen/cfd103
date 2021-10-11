@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author | PYV</title>
+    <link rel="shortcut icon" href="pic/pyv-favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="font/font.css">
+    <style>
+        .user_related a {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #888888;
+            text-decoration: none;
+            margin: 0px 5px;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .header_wrap {
+            display: flex;
+            padding: 10px 30px;
+            background-image: url(pic/header-bgimg.png);
+            background-size: cover;
+            border-bottom: #afafaf 3px solid;
+        }
+
+        .header_wrap>a {
+            width: 95px;
+        }
+
+        .header_wrap img {
+            width: 100%;
+        }
+
+        .header_wrap nav {
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+        }
+
+        .header_wrap nav a {
+            font-size: 18px;
+            text-decoration: none;
+            font-family: "NotoSerifTC-Regular";
+            text-shadow: 0.05em 0.05em #cac9c9;
+            color: #423838;
+            padding: 0px 10px;
+        }
+
+        .header .search {
+            width: 30%;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 7px 0.3px #423838;
+            -webkit-box-shadow: 0px 0px 7px 0.3px #423838;
+            -moz-box-shadow: 0px 0px 7px 0.3px #423838;
+            -o-box-shadow: 0px 0px 7px 0.3px #423838;
+        }
+
+        .header .search_wrap {
+            display: flex;
+            padding: 3px 5px;
+        }
+
+        .header .search_img {
+            max-width: 6%;
+            padding: 5px;
+            border: none;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .header .search img {
+            width: 100%;
+        }
+
+        .header .search_text {
+            width: 100%;
+            flex-grow: 1;
+            font-size: 18px;
+            font-family: "NotoSerifTC-Bold";
+            color: #766e6d;
+            border: none;
+            outline: none;
+        }
+
+        .header .search select {
+            background-color: #e0e0e0;
+            border: #e0e0e0 1px solid;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: "NotoSerifTC-Regular";
+            outline: none;
+            padding: 0px 5px;
+            margin: 0px 10px;
+        }
+
+        .author {
+            background-image: url(pic/bgimg.png);
+        }
+
+        .author_wrap {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            padding-top: 100px;
+        }
+
+        .author_info {
+            width: 30%;
+            height: 100%;
+            background-color: #fff;
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+        }
+
+        .author_content {
+            width: 70%;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+        }
+
+        .author_bg {
+            background-image: url(pic/arm.jpg);
+            height: 150px;
+            border-radius: 5px;
+        }
+
+        .author_name {
+            position: relative;
+
+        }
+
+        .author_name h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 60px;
+        }
+
+        .author_img {
+            display: flex;
+            justify-content: center;
+        }
+
+        .author_name img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: solid 10px rgb(255, 255, 255);
+            position: absolute;
+            top: -60px;
+        }
+
+        .author_about {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
+
+        .author_about button {
+            font-size: 16px;
+            font-family: "NotoSerifTC-Regular";
+            padding: 5px 10px;
+            background: #766e6d;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .author_data {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
+            padding: 10px 0px 10px 0px;
+            text-align: center;
+            box-sizing: border-box;
+            border-top: 1px solid #766e6d;
+        }
+
+        .author_data p {
+            color: #423838;
+            font-family: "NotoSerifTC-Loght";
+            font-size: 16px;
+        }
+
+        .author_data h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .author_content {
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .author_content>h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            padding-bottom: 20px;
+            margin-left: 10px;
+
+        }
+
+        .author_content select {
+            font-size: 18px;
+            font-family: "NotoSerifTC-Bold";
+            color: #766e6d;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 2px 0.3px #423838;
+            -webkit-box-shadow: 0px 0px 2px 0.3px #423838;
+            -moz-box-shadow: 0px 0px 2px 0.3px #423838;
+            -o-box-shadow: 0px 0px 2px 0.3px #423838;
+            margin-right: 20px;
+            margin-left: 10px;
+        }
+
+        .author .search {
+            width: 30%;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0.3px #423838;
+            -webkit-box-shadow: 0px 0px 5px 0.3px #423838;
+            -moz-box-shadow: 0px 0px 5px 0.3px #423838;
+            -o-box-shadow: 0px 0px 5px 0.3px #423838;
+        }
+
+        .author .search_wrap {
+            display: flex;
+            padding: 3px 5px;
+        }
+
+        .author .search_img {
+            max-width: 12%;
+            padding: 5px;
+            border: none;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .author .search img {
+            width: 100%;
+        }
+
+        .author .search_text {
+            width: 100%;
+            flex-grow: 1;
+            font-size: 18px;
+            font-family: "NotoSerifTC-Bold";
+            color: #766e6d;
+            border: none;
+            outline: none;
+        }
+
+        .author_content_function {
+            display: flex;
+        }
+
+
+        .author_content .container {
+            width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .author_content .item {
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+            border-radius: 5px;
+            width: 30.833333%;
+            box-sizing: border-box;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author_content .item_img {
+            overflow: hidden;
+            max-height: 280px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .author_content .item_img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .author_content .item_title {
+            display: flex;
+            padding: 5px;
+        }
+
+        .author_content .item_title p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+        }
+
+        .author_content span {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+        }
+
+        .author_content .item_title .author_img {
+            margin-right: 10px;
+        }
+
+        .author_content .item_title .author_img img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .author_content .item_bottom {
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .author_content .item_collection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author_content .item_collection:hover>img {
+            filter: invert(43%) sepia(12%) saturate(3012%) hue-rotate(314deg) brightness(84%) contrast(109%);
+        }
+
+        .author_content .item_collection img {
+            width: 30px;
+            height: 30px;
+        }
+
+
+        .author_content .item_collection span {
+            padding: 0px 10px;
+        }
+
+        .author_content .item_function {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .author_content .item_function>img {
+            width: 28px;
+            height: 28px;
+            padding: 10px 0px;
+        }
+
+        .author_content .item_dow {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .author_content .item_dow img {
+            width: 18px;
+            height: 18px;
+            padding: 0px 5px;
+        }
+
+        .author_content .item_dow span {
+            color: #888888;
+        }
+
+        .author_content .item_pricedow {
+            display: flex;
+            justify-content: space-evenly;
+            box-sizing: border-box;
+            padding: 10px 20px;
+        }
+
+        .author_content .price {
+            flex-grow: 1;
+        }
+
+        .author_content .price h2 {
+            color: #766e6d;
+            font-family: "NotoSerifTC-Bold";
+            text-shadow: 0.05em 0.05em #aaa;
+            font-size: 20px;
+
+        }
+
+        .author_content .item a {
+            text-decoration: none;
+        }
+
+        .author_content .item:hover a>.item_img img {
+            transform: scale(1.05);
+            transition: 0.5s;
+        }
+
+        .author_content .item_function:hover>img {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background-image: url(pic/bgimg.png);
+            background-size: cover;
+            border-top: #afafaf 3px solid;
+        }
+
+        .footer_wrap {
+            width: 1200px;
+            display: flex;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 10px 0px;
+
+        }
+
+        .service {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service h3,
+        .help h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .service a,
+        .help a {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 0px;
+        }
+
+        .help {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column
+        }
+
+        .peoplesaid {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .peoplesaid_wrap {
+            display: flex;
+            align-items: center;
+            width: 80%;
+        }
+
+        .peoplesaid h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .peoplesaid p {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .peoplesaid h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .right_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .left_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .focusus {
+            width: 25%;
+        }
+
+        .focusus h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .focusus a img {
+            width: 25px;
+            height: 25px;
+            padding-right: 10px;
+        }
+
+
+        .copyright {
+            background-color: rgb(77, 77, 77);
+        }
+
+        .copyright_wrap {
+            width: 1200px;
+            margin: auto;
+            padding: 5px 0px;
+        }
+
+        .copyright_wrap p {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_wrap">
+            <a href="index.html"><img src="pic/pyv-logo.png" alt="pyv">
+            </a>
+            <nav>
+                <a href="#">熱門模型</a>
+                <a href="#">模型分類</a>
+                <a href="#">作者排名</a>
+                <a href="#">代課建模與代印</a>
+                <a href="#">關於我們</a>
+            </nav>
+            <div class="search">
+                <div class="search_wrap">
+                    <input type="text" class="search_text" placeholder="搜尋世上最美好的模型">
+                    <select>
+                        <option>搜模型</option>
+                        <option>搜作者</option>
+                        <option>搜挑戰</option>
+                    </select>
+                    <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                </div>
+            </div>
+            <div class="user_related">
+                <a href="#">會員</a>
+                <a href="#">發布作品</a>
+                <a href="#">購物車</a>
+                <a href="#">聯絡我們</a>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <section class="author">
+        <div class="author_wrap">
+            <div class="author_info">
+                <div class="author_bg"></div>
+                <div class="author_name">
+                    <div class="author_img">
+                        <img src="pic/logo_model.png">
+                    </div>
+                    <h2>Yuriy Lozitskiy</h2>
+                </div>
+                <div class="author_about">
+                    <button>追蹤</button>
+                    <button>打賞</button>
+                    <button>訊息</button>
+                </div>
+                <div class="author_data">
+                    <div class="followers">
+                        <p>146</p>
+                        <h3>追蹤人數</h3>
+                    </div>
+                    <div class="follow">
+                        <p>0</p>
+                        <h3>正在追蹤</h3>
+                    </div>
+                    <div class="design">
+                        <p>4</p>
+                        <h3>設計作品</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="author_content">
+                <h2>設計作品</h2>
+                <div class="author_content_function">
+                    <select>
+                        <option>最新</option>
+                        <option>熱門</option>
+                    </select>
+                    <div class="search">
+                        <div class="search_wrap">
+                            <input type="text" class="search_text" placeholder="搜尋此作者的模型">
+                            <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="item">
+                        <a href="model.html">
+                            <div class="item_title">
+                                <div class="author_img"><img src="pic/logo_model.png"></div>
+                                <p>diy cnc</p>
+                            </div>
+                            <div class="item_img"><img src="pic/cnc.jpg"></div>
+                            <div class="item_pricedow">
+                                <div class="price">
+                                    <h2><span><s>NT$???</s></span> 免費!</h2>
+                                </div>
+                                <div class="item_dow">
+                                    <img src="pic/download.png">
+                                    <span>19506</span>
+                                </div>
+                            </div>
+                            <div class="item_bottom">
+                                <div class="item_collection">
+                                    <img src="pic/collection.png">
+                                    <span>加入收藏</span>
+                                </div>
+                                <div class="item_function">
+                                    <img src="pic/share.png">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="model.html">
+                            <div class="item_title">
+                                <div class="author_img"><img src="pic/logo_model.png"></div>
+                                <p>3d printer</p>
+                            </div>
+                            <div class="item_img"><img src="pic/3dprinter.jpg"></div>
+                            <div class="item_pricedow">
+                                <div class="price">
+                                    <h2><span><s>NT$???</s></span> 免費!</h2>
+                                </div>
+                                <div class="item_dow">
+                                    <img src="pic/download.png">
+                                    <span>1955</span>
+                                </div>
+                            </div>
+                            <div class="item_bottom">
+                                <div class="item_collection">
+                                    <img src="pic/collection.png">
+                                    <span>加入收藏</span>
+                                </div>
+                                <div class="item_function">
+                                    <img src="pic/share.png">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="model.html">
+                            <div class="item_title">
+                                <div class="author_img"><img src="pic/logo_model.png"></div>
+                                <p>ender 3 pro 1:12</p>
+                            </div>
+                            <div class="item_img"><img src="pic/ender3.jpg"></div>
+                            <div class="item_pricedow">
+                                <div class="price">
+                                    <h2><span><s>NT$???</s></span> 免費!</h2>
+                                </div>
+                                <div class="item_dow">
+                                    <img src="pic/download.png">
+                                    <span>24106</span>
+                                </div>
+                            </div>
+                            <div class="item_bottom">
+                                <div class="item_collection">
+                                    <img src="pic/collection.png">
+                                    <span>加入收藏</span>
+                                </div>
+                                <div class="item_function">
+                                    <img src="pic/share.png">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="model.html">
+                            <div class="item_title">
+                                <div class="author_img"><img src="pic/logo_model.png"></div>
+                                <p>卡拉卡拉</p>
+                            </div>
+                            <div class="item_img"><img src="pic/PXL.jpg"></div>
+                            <div class="item_pricedow">
+                                <div class="price">
+                                    <h2><span><s>NT$???</s></span> 免費!</h2>
+                                </div>
+                                <div class="item_dow">
+                                    <img src="pic/download.png">
+                                    <span>10506</span>
+                                </div>
+                            </div>
+                            <div class="item_bottom">
+                                <div class="item_collection">
+                                    <img src="pic/collection.png">
+                                    <span>加入收藏</span>
+                                </div>
+                                <div class="item_function">
+                                    <img src="pic/share.png">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        <div class="footer_wrap">
+            <div class="service">
+                <h3>服務</h3>
+                <a href="#">熱門模型</a>
+                <a href="#">模型分類</a>
+                <a href="#">作者排名</a>
+                <a href="#">代課鍵模與代印</a>
+                <a href="#">關於我們</a>
+            </div>
+            <div class="help">
+                <h3>幫助</h3>
+                <a href="#">聯絡我們</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="peoplesaid">
+                <div class="peoplesaid_wrap">
+                    <div class="left_line"></div>
+                    <h2>其他人都說了什麼</h2>
+                    <div class="right_line"></div>
+                </div>
+                <p>在PYV買了幾個3D模型，<br>是一個很好的選擇也擁有很棒的品質。</p>
+                <h3>kreem Daniel</h3>
+            </div>
+            <div class="focusus">
+                <h3>關注我們</h3>
+                <a href="#"><img src="pic/line.png"></a>
+                <a href="#"><img src="pic/facebook.png"></a>
+                <a href="#"><img src="pic/instagram.png"></a>
+                <a href="#"><img src="pic/youtube.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="copyright_wrap">
+            <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
+        </div>
+    </div>
+</body>
+
+</html>
