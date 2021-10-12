@@ -116,6 +116,160 @@
             padding: 0px 5px;
             margin: 0px 5px;
         }
+
+        select:hover {
+            cursor: pointer;
+        }
+
+        .banner {
+            background-image: url(pic/bgimg.png);
+            background-size: cover;
+            height: 570px;
+        }
+
+        .banner_wrap {
+            width: 1200px;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 100px 20px 0px 20px;
+        }
+
+        .banner_title {
+            color: rgb(66, 56, 56);
+            text-shadow: rgb(255, 255, 255) 0px 1px 0px, rgb(255, 255, 255) 0px 2px 0px, rgb(255, 255, 255) 0px 2.5px 0px, rgb(255, 255, 255) 0px 3.5px 0px, rgb(255, 255, 255) 0px 4px 0px;
+            text-align: center;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 28px;
+            padding-bottom: 20px;
+            padding-top: 15px;
+        }
+
+        .banner_title h1 {
+            margin-bottom: 30px;
+        }
+
+        .container {
+            box-sizing: border-box;
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .item {
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+            border-radius: 5px;
+            width: 28%;
+            box-sizing: border-box;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .function {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .fire,
+        .collection {
+            display: flex;
+        }
+
+        .fire img,
+        .collection img {
+            width: 30px;
+            height: 30px;
+            padding-left: 10px;
+        }
+
+        .fire p,
+        .collection p {
+            color: #000000;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+            padding-left: 5px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .collection a {
+            display: flex;
+        }
+
+        .collection:hover>a img {
+            filter: invert(43%) sepia(1%) saturate(1716%) hue-rotate(333deg) brightness(99%) contrast(85%);
+        }
+
+        .item .img {
+            margin: auto;
+            width: 150px;
+        }
+
+        .item .img img {
+            width: 150px;
+            position: absolute;
+            bottom: 70px;
+            left: calc(50% - 75px);
+            display: flex;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+        }
+
+        .trophy {
+            position: absolute;
+            top: -90px;
+            left: calc(50% - 43.5px);
+            z-index: 1;
+        }
+
+        .item:nth-child(1) .bg {
+            height: 100px;
+            background-image: url(pic/monster.jpg);
+            background-size: cover;
+            border-radius: 5px;
+        }
+
+        .item:nth-child(2) .bg {
+            height: 100px;
+            background-image: url(pic/Aircraft.jpg);
+            background-size: cover;
+            border-radius: 5px;
+        }
+
+        .item:nth-child(3) .bg {
+            height: 100px;
+            background-image: url(pic/car.jpg);
+            background-size: cover;
+            border-radius: 5px;
+        }
+
+        .author_name {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .item:nth-child(1) {
+            position: relative;
+            top: 20px;
+        }
+
+        .item:nth-child(3) {
+            position: relative;
+            top: 30px;
+        }
     </style>
 </head>
 
@@ -129,7 +283,7 @@
                     <li><a href="hot.html">熱門模型</a></li>
                     <li><a href="part.html">模型分類</a></li>
                     <li><a href="rank.html">作者排名</a></li>
-                    <li><a href="c2c.html">代課建模與代印</a></li>
+                    <li><a href="c2c.html">挑戰X需求</a></li>
                     <li><a href="aboutus.html">關於我們</a></li>
                 </ul>
             </nav>
@@ -155,7 +309,66 @@
             </div>
         </div>
     </div>
-
+    <div class="banner">
+        <div class="banner_wrap">
+            <div class="banner_title">
+                <h1>快加入 PYV 成為榜單上的一員吧!</h1>
+            </div>
+            <div class="container">
+                <div class="item">
+                    <div class="bg"></div>
+                    <div class="trophy"><img src="pic/Vector2.png"></div>
+                    <div class="img"><a href="author.html"><img src="pic/author11.jpg"></a></div>
+                    <div class="author_name">
+                        <h2>Warren Cardenas</h2>
+                    </div>
+                    <div class="function">
+                        <div class="fire"><img src="pic/fire.png">
+                            <p>19015</p>
+                        </div>
+                        <div class="collection"><a href="#"><img src="pic/follower.png">
+                                <p>追蹤</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="bg"></div>
+                    <div class="trophy"><img src="pic/Vector.png"></div>
+                    <div class="img"><a href="author.html"><img src="pic/author4.PNG"></a></div>
+                    <div class="author_name">
+                        <h2>Kenneth King</h2>
+                    </div>
+                    <div class="function">
+                        <div class="fire"><img src="pic/fire.png">
+                            <p>25015</p>
+                        </div>
+                        <div class="collection"><a href="#"><img src="pic/follower.png">
+                                <p>追蹤</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="bg"></div>
+                    <div class="trophy"><img src="pic/Vector3.png"></div>
+                    <div class="img"><a href="author.html"><img src="pic/author7.PNG"></a></div>
+                    <div class="author_name">
+                        <h2>Philip Schneider</h2>
+                    </div>
+                    <div class="function">
+                        <div class="fire"><img src="pic/fire.png">
+                            <p>17038</p>
+                        </div>
+                        <div class="collection"><a href="#"><img src="pic/follower.png">
+                                <p>追蹤</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
