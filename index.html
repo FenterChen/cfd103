@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="font/font.css">
     <style>
+        .user_related ul {
+            display: flex;
+        }
+
         .user_related a {
             font-size: 14px;
             font-family: "NotoSerifTC-Light";
@@ -45,11 +49,16 @@
         .header_wrap nav {
             display: flex;
             flex-grow: 1;
+        }
+
+        .header_wrap nav ul {
+            display: flex;
+            flex-grow: 1;
             align-items: center;
             padding-left: 30px;
         }
 
-        .header_wrap nav a {
+        .header_wrap nav ul a {
             font-size: 18px;
             text-decoration: none;
             font-family: "NotoSerifTC-Regular";
@@ -1252,17 +1261,21 @@
             <a href="index.html"><img src="pic/pyv-logo.png" alt="pyv">
             </a>
             <nav>
-                <a href="hot.html">熱門模型</a>
-                <a href="part.html">模型分類</a>
-                <a href="rank.html">作者排名</a>
-                <a href="c2c.html">代課建模與代印</a>
-                <a href="aboutus.html">關於我們</a>
+                <ul>
+                    <li><a href="hot.html">熱門模型</a></li>
+                    <li><a href="part.html">模型分類</a></li>
+                    <li><a href="rank.html">作者排名</a></li>
+                    <li><a href="c2c.html">代課建模與代印</a></li>
+                    <li><a href="aboutus.html">關於我們</a></li>
+                </ul>
             </nav>
             <div class="user_related">
-                <a href="#">會員</a>
-                <a href="#">發布作品</a>
-                <a href="#">購物車</a>
-                <a href="#">聯絡我們</a>
+                <ul>
+                    <li><a href="#">會員</a></li>
+                    <li><a href="#">發布作品</a></li>
+                    <li><a href="#">購物車</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
                 <hr>
             </div>
         </div>
