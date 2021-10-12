@@ -124,7 +124,8 @@
         .banner {
             margin: auto;
             box-sizing: border-box;
-            padding: 70px 0px;
+            margin-top: -260px;
+            margin-bottom: 20px;
         }
 
         .banner img {
@@ -136,8 +137,160 @@
             margin: auto;
         }
 
-        .company_abstract img {
-            width: 30%;
+        .company_abstract .logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .company_abstract .logo img {
+            width: 25%;
+        }
+
+        .company_abstract h1 {
+            font-family: "NotoSerifTC-Bold";
+            font-size: 28px;
+            color: #423838;
+            text-align: center;
+            padding: 20px 0px;
+        }
+
+        .company_abstract p {
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            color: #423838;
+            text-align: center;
+            padding: 10px 0px;
+            line-height: 30px;
+        }
+
+        .footer {
+            background-image: url(pic/bgimg.png);
+            background-size: cover;
+            border-top: #afafaf 3px solid;
+        }
+
+        .footer_wrap {
+            width: 1200px;
+            display: flex;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 10px 20px;
+        }
+
+        .service {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service h3,
+        .help h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .service a,
+        .help a {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 0px;
+        }
+
+        .help {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column
+        }
+
+        .peoplesaid {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .peoplesaid_wrap {
+            display: flex;
+            align-items: center;
+            width: 80%;
+        }
+
+        .peoplesaid h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .peoplesaid p {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .peoplesaid h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .right_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .left_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .focusus {
+            width: 25%;
+        }
+
+        .focusus h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .focusus a img {
+            width: 25px;
+            height: 25px;
+            padding-right: 10px;
+        }
+
+        .copyright {
+            background-color: rgb(77, 77, 77);
+        }
+
+        .copyright_wrap {
+            width: 1200px;
+            margin: auto;
+            padding: 5px 20px;
+            box-sizing: border-box;
+        }
+
+        .copyright_wrap p {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #e0e0e0;
         }
     </style>
 </head>
@@ -181,8 +334,55 @@
     <div class="banner">
         <img src="pic/Our-Group-of-Companies.jpg">
     </div>
-    <div class="company_abstract">
-        <div class="logo"><img src="pic/pyv-logo-big.png"></div>
+    <section class="abstract">
+        <div class="company_abstract">
+            <div class="logo"><img src="pic/logo.png"></div>
+            <h1>創立由來</h1>
+            <p>由一群熱愛分享的Maker所創立，短短幾年間，<br>PYV已是目前全球最大的專業工程師、設計師、製造商和 STEM 學生的在線社群。
+            </p>
+            <p> </p>
+            <div class="cooperate">
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <div class="footer_wrap">
+            <div class="service">
+                <h3>服務</h3>
+                <a href="#">熱門模型</a>
+                <a href="#">模型分類</a>
+                <a href="#">作者排名</a>
+                <a href="#">代課鍵模與代印</a>
+                <a href="#">關於我們</a>
+            </div>
+            <div class="help">
+                <h3>幫助</h3>
+                <a href="#">聯絡我們</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="peoplesaid">
+                <div class="peoplesaid_wrap">
+                    <div class="left_line"></div>
+                    <h2>其他人都說了什麼</h2>
+                    <div class="right_line"></div>
+                </div>
+                <p>在PYV買了幾個3D模型，<br>是一個很好的選擇也擁有很棒的品質。</p>
+                <h3>kreem Daniel</h3>
+            </div>
+            <div class="focusus">
+                <h3>關注我們</h3>
+                <a href="#"><img src="pic/line.png"></a>
+                <a href="#"><img src="pic/facebook.png"></a>
+                <a href="#"><img src="pic/instagram.png"></a>
+                <a href="#"><img src="pic/youtube.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="copyright_wrap">
+            <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
+        </div>
     </div>
 </body>
 
