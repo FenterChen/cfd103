@@ -70,12 +70,13 @@
         .banner {
             position: relative;
             background-image: url(pic/bgimg.png);
+            background-size: cover;
             padding: 100px 20px 0px 20px;
         }
 
         .banner_title {
             color: rgb(66, 56, 56);
-            text-shadow: rgb(204, 204, 204) 0px 1px 0px, rgb(201, 201, 201) 0px 2px 0px, rgb(187, 187, 187) 0px 2.5px 0px, rgb(185, 185, 185) 0px 3.5px 0px, rgb(170, 170, 170) 0px 4px 0px;
+            text-shadow: rgb(255, 255, 255) 0px 1px 0px, rgb(255, 255, 255) 0px 2px 0px, rgb(255, 255, 255) 0px 2.5px 0px, rgb(255, 255, 255) 0px 3.5px 0px, rgb(255, 255, 255) 0px 4px 0px;
             text-align: center;
             font-family: "NotoSerifTC-Bold";
             font-size: 28px;
@@ -85,25 +86,31 @@
 
         .banner_title_wrap {
             width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            margin-bottom: 10px;
             display: flex;
         }
 
         .banner_title_wrap .needs {
-            width: 100px;
+            height: 100%;
             position: absolute;
             right: -100px;
-            bottom: 0;
+            top: -1px;
+            display: flex;
+            justify-content: center;
         }
+
 
         .banner_title_wrap .needs button {
             border: none;
             background-color: #766e6d;
             color: #ffffff;
-            padding: 7px;
+            box-sizing: border-box;
             border-radius: 5px;
             font-size: 18px;
             font-family: "NotoSerifTC-Bold";
-
         }
 
         .banner_title_wrap .needs button:hover {
@@ -118,29 +125,29 @@
         .search {
             width: 40%;
             margin: auto;
-            background-color: #ffffff;
+            padding: 3px;
             border-radius: 10px;
+            background-color: #fff;
             box-shadow: 0px 0px 7px 0.5px #423838;
             -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
             -moz-box-shadow: 0px 0px 7px 0.5px #423838;
             -o-box-shadow: 0px 0px 7px 0.5px #423838;
-            margin-bottom: 10px;
             position: relative;
         }
 
         .search_wrap {
             display: flex;
-            padding: 3px 5px;
-
+            padding: 0px 5px;
+            box-sizing: border-box;
         }
 
         .search_img {
             width: 8%;
             padding: 5px;
             border: none;
-            background-color: #ffffff;
             box-sizing: border-box;
             cursor: pointer;
+            background-color: transparent;
         }
 
         .search img {
@@ -153,6 +160,7 @@
             font-size: 22px;
             font-family: "NotoSerifTC-Bold";
             color: #766e6d;
+            background-color: transparent;
             border: none;
             outline: none;
 
