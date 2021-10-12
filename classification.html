@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part | PYV</title>
+    <link rel="shortcut icon" href="pic/pyv-favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="font/font.css">
+    <style>
+        .user_related ul {
+            display: flex;
+        }
+
+        .user_related a {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #888888;
+            text-decoration: none;
+            margin: 0px 5px;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .header_wrap {
+            display: flex;
+            padding: 10px 30px;
+            background-image: url(pic/header-bgimg.png);
+            background-size: cover;
+            border-bottom: #afafaf 3px solid;
+        }
+
+        .header_wrap>a {
+            width: 95px;
+        }
+
+        .header_wrap img {
+            width: 100%;
+        }
+
+        .header_wrap nav {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .header_wrap nav ul {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            padding-left: 30px;
+        }
+
+        .header_wrap nav ul a {
+            font-size: 18px;
+            text-decoration: none;
+            font-family: "NotoSerifTC-Regular";
+            text-shadow: 0.05em 0.05em #cac9c9;
+            color: #423838;
+            padding: 0px 10px;
+        }
+
+        .banner {
+            background-image: url(pic/bgimg.png);
+            background-size: cover;
+        }
+
+        .banner_wrap {
+            margin: auto;
+            box-sizing: border-box;
+            padding: 100px 20px 0px 20px;
+        }
+
+        .banner_title {
+            color: rgb(66, 56, 56);
+            text-shadow: rgb(255, 255, 255) 0px 1px 0px, rgb(255, 255, 255) 0px 2px 0px, rgb(255, 255, 255) 0px 2.5px 0px, rgb(255, 255, 255) 0px 3.5px 0px, rgb(255, 255, 255) 0px 4px 0px;
+            text-align: center;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 28px;
+            padding-bottom: 20px;
+            padding-top: 15px;
+        }
+
+        .banner_title h1 {
+            margin-bottom: 30px;
+        }
+
+        .search {
+            width: 40%;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 7px 0.5px #423838;
+            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
+            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
+            -o-box-shadow: 0px 0px 7px 0.5px #423838;
+            margin-bottom: 10px;
+        }
+
+        .search_wrap {
+            display: flex;
+            padding: 3px 5px;
+        }
+
+        .search_img {
+            width: 8%;
+            padding: 5px;
+            border: none;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .search img {
+            width: 100%;
+        }
+
+        .search_text {
+            width: 100%;
+            flex-grow: 1;
+            font-size: 22px;
+            font-family: "NotoSerifTC-Bold";
+            color: #766e6d;
+            border: none;
+            outline: none;
+
+        }
+
+        .search select {
+            background-color: #e0e0e0;
+            border: #e0e0e0 1px solid;
+            border-radius: 6px;
+            font-size: 18px;
+            font-family: "NotoSerifTC-Regular";
+            outline: none;
+            padding: 0px 5px;
+            margin: 0px 10px;
+        }
+
+        .banner_title>select {
+            background-color: #e0e0e0;
+            border: #e0e0e0 1px solid;
+            border-radius: 6px;
+            font-size: 18px;
+            font-family: "NotoSerifTC-Regular";
+            outline: none;
+            padding: 0px 5px;
+            margin: 0px 10px;
+            box-shadow: 0px 0px 7px 0.3px #423838;
+            -webkit-box-shadow: 0px 0px 7px 0.3px #423838;
+            -moz-box-shadow: 0px 0px 7px 0.3px #423838;
+            -o-box-shadow: 0px 0px 7px 0.3px #423838;
+        }
+
+        .printer {
+            margin-top: 10px;
+        }
+
+        .printer h1 {
+            width: 1200px;
+            margin: auto;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 28px;
+            color: #ffffff;
+            text-align: center;
+            padding-bottom: 15px;
+            padding-top: 20px;
+            background-color: #9093AB;
+            border-radius: 5px;
+        }
+
+        .printer .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 1200px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .printer .item {
+            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
+            border-radius: 5px;
+            width: 23.305084%;
+            box-sizing: border-box;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .printer .item_img {
+            overflow: hidden;
+            max-height: 280px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .printer .item_img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .printer .item_title {
+            display: flex;
+            padding: 5px;
+        }
+
+        .printer .item_title p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+        }
+
+        .printer span {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+        }
+
+        .printer .item_title .author_img {
+            margin-right: 10px;
+        }
+
+        .printer .item_title .author_img img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .printer .item_bottom {
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .printer .item_collection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .printer .item_collection:hover>img {
+            filter: invert(43%) sepia(12%) saturate(3012%) hue-rotate(314deg) brightness(84%) contrast(109%);
+        }
+
+        .printer .item_collection img {
+            width: 30px;
+            height: 30px;
+        }
+
+
+        .printer .item_collection span {
+            padding: 0px 10px;
+        }
+
+        .printer .item_function {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .printer .item_function>img {
+            width: 28px;
+            height: 28px;
+            padding: 10px 0px;
+        }
+
+        .printer .item_dow {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .printer .item_dow img {
+            width: 18px;
+            height: 18px;
+            padding: 0px 5px;
+        }
+
+        .printer .item_dow span {
+            color: #888888;
+        }
+
+        .printer .item_pricedow {
+            display: flex;
+            justify-content: space-evenly;
+            box-sizing: border-box;
+            padding: 10px 20px;
+        }
+
+        .printer .price {
+            flex-grow: 1;
+        }
+
+        .printer .price h2 {
+            color: #766e6d;
+            font-family: "NotoSerifTC-Bold";
+            text-shadow: 0.05em 0.05em #aaa;
+            font-size: 20px;
+
+        }
+
+        .printer .item a {
+            text-decoration: none;
+        }
+
+        .printer .item:hover a>.item_img img {
+            transform: scale(1.05);
+            transition: 0.5s;
+        }
+
+        .printer .item_function:hover>img {
+            transform: scale(1.1);
+        }
+
+        .printer a {
+            text-decoration: none;
+            color: #766e6d;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+        }
+
+        .page {
+            width: 1200px;
+            background: #9093AB;
+            border-radius: 10px;
+            padding: 15px;
+            margin: auto;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page a {
+            color: #ffffff;
+            padding: 0px 5px;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+            position: relative;
+            left: 33px;
+        }
+
+        .page a:nth-child(1),
+        .page a:nth-child(2),
+        .page a:nth-child(7),
+        .page a:nth-child(8) {
+            color: black;
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin: 0px 5px;
+        }
+
+        .page a:nth-child(3) {
+            border-bottom: #ffffff solid 1px;
+            margin: 0px 5px;
+        }
+
+        .footer {
+            background-image: url(pic/bgimg.png);
+            background-size: cover;
+            border-top: #afafaf 3px solid;
+        }
+
+        .footer_wrap {
+            width: 1200px;
+            display: flex;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 10px 20px;
+        }
+
+        .service {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service h3,
+        .help h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .service a,
+        .help a {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 0px;
+        }
+
+        .help {
+            width: 12.5%;
+            display: flex;
+            flex-direction: column
+        }
+
+        .peoplesaid {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .peoplesaid_wrap {
+            display: flex;
+            align-items: center;
+            width: 80%;
+        }
+
+        .peoplesaid h2 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .peoplesaid p {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .peoplesaid h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .right_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .left_line {
+            width: 20%;
+            height: 1px;
+            margin-top: 9px;
+            border-top: solid #423838 1px;
+            flex-grow: 1;
+        }
+
+        .focusus {
+            width: 25%;
+        }
+
+        .focusus h3 {
+            color: #423838;
+            font-family: "NotoSerifTC-Bold";
+            font-size: 18px;
+            padding: 15px 15px 15px 0px;
+        }
+
+        .focusus a img {
+            width: 25px;
+            height: 25px;
+            padding-right: 10px;
+        }
+
+        .copyright {
+            background-color: rgb(77, 77, 77);
+        }
+
+        .copyright_wrap {
+            width: 1200px;
+            margin: auto;
+            padding: 5px 20px;
+            box-sizing: border-box;
+        }
+
+        .copyright_wrap p {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_wrap">
+            <a href="index.html"><img src="pic/pyv-logo.png" alt="pyv">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="hot.html">熱門模型</a></li>
+                    <li><a href="classification.html">模型分類</a></li>
+                    <li><a href="rank.html">作者排名</a></li>
+                    <li><a href="c2c.html">代課建模與代印</a></li>
+                    <li><a href="aboutus.html">關於我們</a></li>
+                </ul>
+            </nav>
+            <div class="user_related">
+                <ul>
+                    <li><a href="#">會員</a></li>
+                    <li><a href="#">發布作品</a></li>
+                    <li><a href="#">購物車</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="banner_wrap">
+            <div class="banner_title">
+                <h1>超過30,000的3D設計都在 PYV</h1>
+                <div class="search">
+                    <div class="search_wrap">
+                        <input type="text" class="search_text" placeholder="搜尋世上最美好的模型">
+                        <select>
+                            <option>搜模型</option>
+                            <option>搜作者</option>
+                            <option>搜挑戰</option>
+                        </select>
+                        <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                    </div>
+                </div>
+                <select>
+                    <option>價格</option>
+                    <option>免費</option>
+                    <option>付費</option>
+                </select>
+                <select>
+                    <option>類別</option>
+                    <option>3D列印機</option>
+                    <option>藝術</option>
+                    <option>家用</option>
+                    <option>公仔</option>
+                    <option>工具</option>
+                    <option>玩具</option>
+                    <option>其他</option>
+                </select>
+                <select>
+                    <option>排名</option>
+                    <option>熱度</option>
+                    <option>收藏數</option>
+                    <option>追蹤人數</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <section class="printer" id="printer">
+        <h1>3D列印機</h1>
+        <div class="container">
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="model.html">
+                    <div class="item_title">
+                        <div class="author_img"><img src="pic/logo_model.png"></div>
+                        <p>diy cnc</p>
+                    </div>
+                    <div class="item_img"><img src="pic/cnc.jpg"></div>
+                    <div class="item_pricedow">
+                        <div class="price">
+                            <h2><span><s>NT$???</s></span> 免費!</h2>
+                        </div>
+                        <div class="item_dow">
+                            <img src="pic/download.png">
+                            <span>19506</span>
+                        </div>
+                    </div>
+                    <div class="item_bottom">
+                        <div class="item_collection">
+                            <img src="pic/collection.png">
+                            <span>加入收藏</span>
+                        </div>
+                        <div class="item_function">
+                            <img src="pic/share.png">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="page">
+                <a href="#">&lt;&lt;</a>
+                <a href="#">&lt;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">&gt; 查看更多</a>
+                <a href="#">&gt;&gt;</a>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        <div class="footer_wrap">
+            <div class="service">
+                <h3>服務</h3>
+                <a href="#">熱門模型</a>
+                <a href="#">模型分類</a>
+                <a href="#">作者排名</a>
+                <a href="#">代課鍵模與代印</a>
+                <a href="#">關於我們</a>
+            </div>
+            <div class="help">
+                <h3>幫助</h3>
+                <a href="#">聯絡我們</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="peoplesaid">
+                <div class="peoplesaid_wrap">
+                    <div class="left_line"></div>
+                    <h2>其他人都說了什麼</h2>
+                    <div class="right_line"></div>
+                </div>
+                <p>在PYV買了幾個3D模型，<br>是一個很好的選擇也擁有很棒的品質。</p>
+                <h3>kreem Daniel</h3>
+            </div>
+            <div class="focusus">
+                <h3>關注我們</h3>
+                <a href="#"><img src="pic/line.png"></a>
+                <a href="#"><img src="pic/facebook.png"></a>
+                <a href="#"><img src="pic/instagram.png"></a>
+                <a href="#"><img src="pic/youtube.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="copyright_wrap">
+            <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
+        </div>
+    </div>
+</body>
+
+</html>
