@@ -124,8 +124,8 @@
         .banner {
             margin: auto;
             box-sizing: border-box;
-            margin-top: -260px;
-            margin-bottom: 20px;
+            margin-top: -18%;
+            margin-bottom: 60px;
         }
 
         .banner img {
@@ -148,19 +148,19 @@
 
         .company_abstract h1 {
             font-family: "NotoSerifTC-Bold";
-            font-size: 28px;
+            font-size: 36px;
             color: #423838;
             text-align: center;
-            padding: 20px 0px;
+            margin-top: 20px;
         }
 
         .company_abstract p {
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
+            font-size: 20px;
             color: #423838;
             text-align: center;
             padding: 10px 0px;
-            line-height: 30px;
+            line-height: 40px;
         }
 
         .footer {
@@ -292,6 +292,68 @@
             font-family: "NotoSerifTC-Light";
             color: #e0e0e0;
         }
+
+        .bg img {
+            width: 100%;
+            height: 150px;
+        }
+
+        .bg_img {
+            width: 100%;
+            -webkit-transform: translate(0px, 0px) rotate(0deg) skew(0deg, 3deg) scale(1, 1);
+            -moz-transform: translate(0px, 0px) rotate(0deg) skew(0deg, 3deg) scale(1, 1);
+            -o-transform: translate(0px, 0px) rotate(0deg) skew(0deg, 3deg) scale(1, 1);
+            -ms-transform: translate(0px, 0px) rotate(0deg) skew(0deg, 3deg) scale(1, 1);
+            transform: translate(0px, 0px) rotate(0deg) skew(0deg, 3deg) scale(1, 1);
+        }
+
+        .bg h1 {
+            font-family: "NotoSerifTC-Bold";
+            font-size: 46px;
+            color: #423838;
+            text-align: center;
+            position: relative;
+            top: 100px;
+            z-index: 1;
+        }
+
+        .forecast {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+        }
+
+        .future {
+            width: 50%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .future img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .txt {
+            width: 35%;
+            height: 280px;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            position: relative;
+            top: 60px;
+            left: -50px;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 30px;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 18px;
+            color: #423838;
+            text-indent: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -338,14 +400,30 @@
         <div class="company_abstract">
             <div class="logo"><img src="pic/logo.png"></div>
             <h1>創立由來</h1>
-            <p>由一群熱愛分享的Maker所創立，短短幾年間，<br>PYV已是目前全球最大的專業工程師、設計師、製造商和 STEM 學生的在線社群。
+            <p>由一群熱愛分享的Maker所創立，短短幾年間，<br>PYV已是目前全球最大的專業工程師、設計師、製造商和 STEM
+                學生的在線社群。<br>我們努力為用戶提供一個易於使用的平台，讓他們可以探索、共享和下載高質量的3D 可列印的設計。
             </p>
             <p> </p>
             <div class="cooperate">
             </div>
         </div>
     </section>
-
+    <div class="bg">
+        <h1>團隊展望</h1>
+        <div class="bg_img"><img src="pic/bgimg.png"></div>
+    </div>
+    <section class="forecast">
+        <div class="future">
+            <img src="pic/people.jpg">
+        </div>
+        <div class="txt">
+            <p>
+                我們的目標是建立一個由各種經驗水平的創新製造商和設計師組成的參與社區，最終幫助塑造 3D 打印的未來。
+            <p>
+                我們熱愛 3D 打印及其所有潛力！ 我們的目標是創建一個平台，讓 3D 打印的所有主要參與者（設計師、製造商、製造商等）都可以進一步投資 3D 列印。
+            </p>
+        </div>
+    </section>
     <div class="footer">
         <div class="footer_wrap">
             <div class="service">
