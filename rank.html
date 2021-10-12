@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank | PYV</title>
+    <link rel="shortcut icon" href="pic/pyv-favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="font/font.css">
+    <style>
+        .user_related a {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #888888;
+            text-decoration: none;
+            margin: 0px 5px;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: auto
+        }
+
+        .header_wrap {
+            display: flex;
+            padding: 10px 30px;
+            background-image: url(pic/header-bgimg.png);
+            background-size: cover;
+            border-bottom: #afafaf 3px solid;
+        }
+
+        .header_wrap>a {
+            width: 95px;
+        }
+
+        .header_wrap img {
+            width: 100%;
+        }
+
+        .header_wrap nav {
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            width: 46%;
+        }
+
+        .header_wrap nav a {
+            font-size: 18px;
+            text-decoration: none;
+            font-family: "NotoSerifTC-Regular";
+            text-shadow: 0.05em 0.05em #cac9c9;
+            color: #423838;
+            padding: 0px 10px;
+        }
+
+        .header .search {
+            width: 21%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 7px 0.3px #423838;
+            -webkit-box-shadow: 0px 0px 7px 0.3px #423838;
+            -moz-box-shadow: 0px 0px 7px 0.3px #423838;
+            -o-box-shadow: 0px 0px 7px 0.3px #423838;
+        }
+
+        .header .search_wrap {
+            display: flex;
+            padding: 3px 5px;
+        }
+
+        .header .search_img {
+            max-width: 10%;
+            padding: 5px;
+            border: none;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .header .search img {
+            width: 100%;
+        }
+
+        .header .search_text {
+            width: 100%;
+            flex-grow: 1;
+            font-size: 16px;
+            font-family: "NotoSerifTC-Bold";
+            color: #766e6d;
+            border: none;
+            outline: none;
+        }
+
+        .header .search select {
+            background-color: #e0e0e0;
+            border: #e0e0e0 1px solid;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: "NotoSerifTC-Regular";
+            outline: none;
+            padding: 0px 5px;
+            margin: 0px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_wrap">
+            <a href="index.html"><img src="pic/pyv-logo.png" alt="pyv">
+            </a>
+            <nav>
+                <a href="hot.html">熱門模型</a>
+                <a href="part.html">模型分類</a>
+                <a href="rank.html">作者排名</a>
+                <a href="c2c.html">代課建模與代印</a>
+                <a href="aboutus.html">關於我們</a>
+            </nav>
+            <div class="search">
+                <div class="search_wrap">
+                    <input type="text" class="search_text" placeholder="搜尋美好的模型">
+                    <select>
+                        <option>搜模型</option>
+                        <option>搜作者</option>
+                        <option>搜挑戰</option>
+                    </select>
+                    <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                </div>
+            </div>
+            <div class="user_related">
+                <a href="#">會員</a>
+                <a href="#">發布作品</a>
+                <a href="#">購物車</a>
+                <a href="#">聯絡我們</a>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
