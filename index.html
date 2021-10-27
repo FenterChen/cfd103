@@ -9,152 +9,11 @@
     <link rel="shortcut icon" href="pic/pyv-favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="font/font.css">
+    <link rel="stylesheet" href="owlcarousel/docs/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/docs/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="owlcarousel/docs/assets/owlcarousel/owl.carousel.min.js"></script>
     <style>
-        .user_related ul {
-            display: flex;
-        }
-
-        .user_related a {
-            font-size: 14px;
-            font-family: "NotoSerifTC-Light";
-            color: #888888;
-            text-decoration: none;
-            margin: 0px 5px;
-        }
-
-        .header {
-            position: fixed;
-            z-index: 2;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-
-        .header_wrap {
-            display: flex;
-            padding: 10px 30px;
-            background-image: url(pic/header-bgimg.png);
-            background-size: cover;
-            border-bottom: #afafaf 3px solid;
-        }
-
-        .header_wrap>a {
-            width: 95px;
-        }
-
-        .header_wrap img {
-            width: 100%;
-        }
-
-        .header_wrap nav {
-            display: flex;
-            flex-grow: 1;
-        }
-
-        .header_wrap nav ul {
-            display: flex;
-            flex-grow: 1;
-            align-items: center;
-            padding-left: 30px;
-        }
-
-        .header_wrap nav ul a {
-            font-size: 18px;
-            text-decoration: none;
-            font-family: "NotoSerifTC-Regular";
-            text-shadow: 0.05em 0.05em #cac9c9;
-            color: #423838;
-            padding: 0px 10px;
-        }
-
-        .banner {
-            position: relative;
-            background-image: url(pic/bgimg.jpg);
-        }
-
-        .banner_wrap {
-            margin: auto;
-            width: 55%;
-            padding-top: 100px;
-            padding-bottom: 20px;
-        }
-
-        .banner img {
-            width: 100%;
-        }
-
-        .mask {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
-            background: -moz-linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
-            background: -webkit-linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
-            background: -o-linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
-            position: absolute;
-            opacity: 0;
-            animation: appear 1.5s;
-            animation-fill-mode: forwards;
-        }
-
-        .search {
-            width: 40%;
-            margin: auto;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 7px 0.5px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
-            -o-box-shadow: 0px 0px 7px 0.5px #423838;
-            position: absolute;
-            top: 67%;
-            right: 0;
-            left: 0;
-            z-index: 1;
-            opacity: 0;
-            animation: bounce 1s 1.5s;
-            animation-fill-mode: forwards;
-        }
-
-        .search_wrap {
-            display: flex;
-            padding: 3px 5px;
-        }
-
-        .search_img {
-            width: 8%;
-            padding: 5px;
-            border: none;
-            background-color: #ffffff;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-
-        .search img {
-            width: 100%;
-        }
-
-        .search_text {
-            width: 100%;
-            flex-grow: 1;
-            font-size: 22px;
-            font-family: "NotoSerifTC-Bold";
-            color: #766e6d;
-            border: none;
-            outline: none;
-        }
-
-        .search select {
-            background-color: #e0e0e0;
-            border: #e0e0e0 1px solid;
-            border-radius: 6px;
-            font-size: 18px;
-            font-family: "NotoSerifTC-Regular";
-            outline: none;
-            padding: 0px 5px;
-            margin: 0px 10px;
-        }
-
-
         @keyframes appear {
             0% {
                 opacity: 0;
@@ -248,101 +107,203 @@
             100% {}
         }
 
-        .hot {
-            background-color: #f8f8f8;
-            margin-top: 100px;
-            margin-bottom: 100px;
+        .user_related ul {
+            display: flex;
+        }
+
+        .user_related a {
+            font-size: 14px;
+            font-family: "NotoSerifTC-Light";
+            color: #888888;
+            text-decoration: none;
+            margin: 0px 5px;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .header_wrap {
+            display: flex;
+            padding: 10px 30px;
+            background-image: url(pic/header-bgimg.png);
+            background-size: cover;
+            border-bottom: #afafaf 3px solid;
+        }
+
+        .header_wrap>a {
+            width: 95px;
+        }
+
+        .header_wrap img {
+            width: 100%;
+        }
+
+        .header_wrap nav {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .header_wrap nav ul {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            padding-left: 30px;
+        }
+
+        .header_wrap nav ul a {
+            font-size: 18px;
+            text-decoration: none;
+            font-family: "NotoSerifTC-Regular";
+            text-shadow: 0.05em 0.05em #cac9c9;
+            color: #423838;
+            padding: 0px 10px;
+        }
+
+        .banner {
+            position: relative;
+            background-image: url(pic/bgimg.jpg);
+            clip-path: polygon(0% 0%, 100% 0, 100% 78%, 50% 90%, 0 78%);
+        }
+
+        .banner_wrap {
+            margin: auto;
+            width: 55%;
+            padding-top: 100px;
+            padding-bottom: 10%;
+            margin-bottom: -1%;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        .banner .mask {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
+            background: -moz-linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
+            background: -webkit-linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
+            background: -o-linear-gradient(270deg, rgba(175, 175, 175, 0.5)70%, rgba(255, 255, 255, 0.8)100%);
+            position: absolute;
+            opacity: 0;
+            animation: appear 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .search {
+            width: 40%;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 7px 0.5px #423838;
+            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
+            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
+            -o-box-shadow: 0px 0px 7px 0.5px #423838;
+            position: absolute;
+            top: 67%;
+            right: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0;
+            animation: bounce 1s 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .search_wrap {
+            display: flex;
+            padding: 3px 5px;
+        }
+
+        .search_img {
+            width: 8%;
+            padding: 5px;
+            border: none;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .search img {
+            width: 100%;
+        }
+
+        .search_text {
+            width: 100%;
+            flex-grow: 1;
+            font-size: 22px;
+            font-family: "NotoSerifTC-Bold";
+            color: #766e6d;
+            border: none;
+            outline: none;
+        }
+
+        .search select {
+            background-color: #e0e0e0;
+            border: #e0e0e0 1px solid;
+            border-radius: 6px;
+            font-size: 18px;
+            font-family: "NotoSerifTC-Regular";
+            outline: none;
+            padding: 0px 5px;
+            margin: 0px 10px;
         }
 
         .hotmodel {
             width: 1200px;
-            border-radius: 15px;
+            padding-bottom: 1%;
             margin: auto;
             display: flex;
             flex-direction: column;
-            position: relative;
             overflow: hidden;
         }
 
-        .hotmodel_title {
-            width: 600px;
-            position: relative;
-        }
-
         .hot .triangle {
-            width: 0;
-            height: 0;
-            border-top: 90px solid #766e6d;
-            border-right: 600px solid transparent;
+            width: 600px;
+            height: 90px;
+            background: #766e6d;
             position: relative;
-        }
-
-        .hot .triangle_right {
-            width: 100px;
-            height: 20px;
-            background-color: #f8f8f8;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .hot .triangle_left {
-            width: 0;
-            height: 0;
-            border-bottom: 50px solid #f8f8f8;
-            border-left: 100px solid transparent;
-            position: relative;
-            top: 0;
-            right: 100px;
+            border-radius: 5px;
+            clip-path: polygon(0% 0%, 55% 0, 78% 30%, 0% 100%);
         }
 
         .hot .triangle_reverse_end {
             display: flex;
             justify-content: flex-end;
-            margin-bottom: -70px;
-            transform: translateY(-70px);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            transform: translateY(-100px);
         }
 
         .hot .triangle_reverse {
-            width: 0;
-            height: 0;
-            border-bottom: 90px solid #e0e0e0;
-            border-left: 600px solid transparent;
-            position: relative;
+            width: 600px;
+            height: 110px;
+            border-radius: 5px;
+            background: #D1C3BC;
+            clip-path: polygon(85% 0, 100% 0%, 100% 48%, 39% 100%, 7% 59%);
         }
 
-        .hot .triangle_right_reverse_wrap {
+        .hot a {
+            text-decoration: none;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
-        .hot .triangle_right_reverse {
-            width: 100px;
-            height: 20px;
-            background-color: #f8f8f8;
-            position: relative;
-            left: 100px;
-            z-index: 1;
-        }
-
-        .hot .triangle_left_reverse {
-            width: 0;
-            height: 0;
-            border-top: 50px solid #f8f8f8;
-            border-right: 100px solid transparent;
-            position: absolute;
-            right: -100px;
-            bottom: 0;
         }
 
         .hotmodel h1 {
             font-size: 28px;
+            color: #FFFFFF;
+            text-shadow: rgb(66, 56, 56) 4px 4px 4px;
             font-family: "NotoSerifTC-Bold";
-            color: #ffffff;
+        }
+
+        .hotmodel_title a {
+            width: 21.666666%;
             position: relative;
-            bottom: 70px;
-            left: 40px;
+            top: 23%;
+            left: 5%;
         }
 
         .hotmodel_container {
@@ -355,10 +316,7 @@
             border-top-left-radius: 5px;
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 5px;
-            box-shadow: 0px 0px 7px 0.5px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
-            -o-box-shadow: 0px 0px 7px 0.5px #423838;
+            box-shadow: 0px 0px 7px 0.5px #766e6d;
         }
 
         .hotmodel_container .item {
@@ -368,7 +326,7 @@
         }
 
         .hotmodel_container .item h3 {
-            color: #766e6d;
+            color: #423838;
             font-family: "NotoSerifTC-Bold";
             font-size: 18px;
             margin-bottom: 10px;
@@ -378,6 +336,7 @@
             font-family: "NotoSerifTC-Light";
             font-size: 16px;
             line-height: 22px;
+            color: #000000;
         }
 
         .hotmodel_container_1 {
@@ -390,10 +349,7 @@
             border-top-left-radius: 5px;
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 5px;
-            box-shadow: 0px 0px 7px 0.5px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
-            -o-box-shadow: 0px 0px 7px 0.5px #423838;
+            box-shadow: 0px 0px 7px 0.5px #766e6d;
             position: relative;
             right: 100px;
         }
@@ -415,6 +371,7 @@
             font-family: "NotoSerifTC-Light";
             font-size: 16px;
             line-height: 22px;
+            color: #000000;
         }
 
         .hotmodel_container_2 {
@@ -427,10 +384,7 @@
             border-top-left-radius: 5px;
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 5px;
-            box-shadow: 0px 0px 7px 0.5px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
-            -o-box-shadow: 0px 0px 7px 0.5px #423838;
+            box-shadow: 0px 0px 7px 0.5px #766e6d;
         }
 
         .hotmodel_container_2 .item {
@@ -450,6 +404,7 @@
             font-family: "NotoSerifTC-Light";
             font-size: 16px;
             line-height: 22px;
+            color: #000000;
         }
 
         .hotmodel_container_3 {
@@ -462,10 +417,7 @@
             border-top-left-radius: 5px;
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 5px;
-            box-shadow: 0px 0px 7px 0.5px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
-            -o-box-shadow: 0px 0px 7px 0.5px #423838;
+            box-shadow: 0px 0px 7px 0.5px #766e6d;
             position: relative;
             left: 100px;
         }
@@ -474,6 +426,7 @@
             width: 50%;
             box-sizing: border-box;
             padding-right: 5px;
+
         }
 
         .hotmodel_container_3 .item h3 {
@@ -487,6 +440,7 @@
             font-family: "NotoSerifTC-Light";
             font-size: 16px;
             line-height: 22px;
+            color: #000000;
         }
 
         .hotmodel_container .item_img,
@@ -494,6 +448,10 @@
         .hotmodel_container_2 .item_img,
         .hotmodel_container_3 .item_img {
             width: 50%;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 5px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -544,592 +502,280 @@
             transition: 0.5s;
         }
 
-        .free {
-            margin-top: 20px;
+        .modelparts {
+            margin-top: -170px;
+            padding-bottom: 220px;
+            background-image: url(pic/bgimg3.jpg);
+            background-size: cover;
+            clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 75%);
+            overflow: hidden;
         }
 
-        .free_wrap {
+        .modelparts_wrap {
             width: 1200px;
             margin: auto;
+            padding-top: 300px;
+            overflow: hidden;
         }
 
-        .free_title {
-            text-align: center;
+        .modelparts .item img {
+            border: #423838;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 15px;
         }
 
-        .free_title a {
+        .modelparts_title {
+            margin-top: -40px;
+            position: relative;
+        }
+
+        .modelparts_title .triangle {
+            width: 480px;
+            height: 72px;
+            background: #766e6d;
+            position: relative;
+            border-radius: 5px;
+            clip-path: polygon(0% 0%, 55% 0, 78% 29%, 0% 100%);
+            z-index: 1;
+        }
+
+        .modelparts_title a {
+            font-size: 24px;
             text-decoration: none;
             color: #766e6d;
         }
 
-        .free_title a:hover {
-            color: #423838;
+        .modelparts_title a:hover {
+            color: #9093AB;
         }
 
-        .free_title h1 {
+        .modelparts_title h1 {
             font-size: 28px;
+            color: #FFFFFF;
+            text-shadow: rgb(66, 56, 56) 4px 4px 4px;
             font-family: "NotoSerifTC-Bold";
-            padding: 20px;
-            color: #423838
+            position: absolute;
+            top: 20%;
+            left: 3%;
+            z-index: 1;
         }
 
-        .free_classification ul {
+        .modelparts_classification ul {
             display: flex;
-            justify-content: center;
-        }
-
-        .free_classification li {
-            font-size: 20px;
-            font-family: "NotoSerifTC-Bold";
-            padding: 0px 10px;
-            color: #423838
-        }
-
-        .free_wrap .container {
-            width: 1200px;
-            display: flex;
-            margin-top: 50px;
-            margin-bottom: 100px;
             position: relative;
+            width: 50%;
+            margin-top: -1%;
+            padding: 25px 10px 10px 10px;
             box-sizing: border-box;
-            padding: 10px;
-
+            background-color: #fff;
+            border-bottom: 4px solid #cac9c9;
+            border-left: 4px solid #cac9c9;
+            border-radius: 5px;
+            clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
         }
 
-        .free_wrap .item {
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
-            border-radius: 5px;
-            width: 33.333333%;
+        .modelparts_classification li {
+            font-size: 18px;
+            font-family: "NotoSerifTC-Bold";
+            padding: 0px 20px 0px 0px;
+            color: #423838;
+            text-shadow: 0.02em 0.02em #888888;
+        }
+
+        .modelparts .info {
+            display: flex;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .modelparts .info img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .modelparts .info h3 {
+            font-family: "NotoSerifTC-thin";
+            font-size: 16px;
+            padding: 5px;
             box-sizing: border-box;
             display: flex;
-            flex-direction: column;
-            margin: 0px 15px;
+            align-items: center;
         }
 
-        .free_wrap .item_img {
-            overflow: hidden;
-            max-height: 280px;
-            max-width: 400px;
-            margin: auto;
+        .modelparts .owl-carousel {
+            margin-top: 30px;
+            margin-bottom: 60px;
+            position: relative;
+            left: 20%;
         }
 
-        .free_wrap .item_img img {
+        .modelparts .owl-stage-outer {
+            padding-bottom: 5px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 4px 4px rgba(66, 56, 56, 0.15);
+        }
+
+        .modelparts .item_title {
+            display: flex;
+            padding: 5px;
+        }
+
+        .modelparts .item {
+            box-sizing: border-box;
+            padding: 5px 15px;
+        }
+
+        .modelparts .owl-nav {
             width: 100%;
-            height: 100%;
-        }
-
-        .free .item_title {
-            display: flex;
-            padding: 5px;
-        }
-
-        .free .item_title p {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #423838;
-            font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
-        }
-
-        .free span {
-            color: #423838;
-            font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
-        }
-
-        .free .item_title .author_img {
-            margin-right: 10px;
-        }
-
-        .free .item_title .author_img img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-
-        .free .item_bottom {
-            padding: 5px;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .free .item_collection {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .free .item_collection:hover>img,
-        .paid .item_collection:hover>img {
-            filter: invert(43%) sepia(12%) saturate(3012%) hue-rotate(314deg) brightness(84%) contrast(109%);
-        }
-
-        .free .item_collection img {
-            width: 30px;
-            height: 30px;
-        }
-
-
-        .free .item_collection span {
-            padding: 0px 10px;
-        }
-
-        .free .item_function {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .free .item_function>img {
-            width: 28px;
-            height: 28px;
-            padding: 10px 0px;
-        }
-
-        .free .item_dow {
-            display: flex;
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        .free .item_dow img {
-            width: 18px;
-            height: 18px;
-            padding: 0px 5px;
-        }
-
-        .free .item_dow span {
-            color: #888888;
-        }
-
-        .free .item_pricedow {
-            display: flex;
-            justify-content: space-evenly;
-            box-sizing: border-box;
-            padding: 10px 20px;
-        }
-
-        .free .price {
-            flex-grow: 1;
-        }
-
-        .free .price h2 {
-            color: #766e6d;
-            font-family: "NotoSerifTC-Bold";
-            text-shadow: 0.05em 0.05em #aaa;
-            font-size: 20px;
-        }
-
-        .free .item a {
-            text-decoration: none;
-        }
-
-        .free .item:hover a>.item_img img {
-            transform: scale(1.05);
-            transition: 0.5s;
-        }
-
-        .free_wrap .item:nth-child(3),
-        .free_wrap .item:nth-child(5) {
-            opacity: 0.8;
-            transform: scale(0.85);
-        }
-
-        .paid {
-            margin-top: 40px;
-        }
-
-        .paid_wrap {
-            width: 1200px;
-            margin: auto;
-        }
-
-        .paid_title {
-            text-align: center;
-        }
-
-        .paid_title a {
-            text-decoration: none;
-            color: #766e6d;
-        }
-
-        .paid_title a:hover {
-            color: #423838;
-        }
-
-        .paid_title h1 {
-            font-size: 28px;
-            font-family: "NotoSerifTC-Bold";
-            padding: 20px;
-            color: #423838
-        }
-
-        .paid_classification ul {
-            display: flex;
-            justify-content: center;
-        }
-
-        .paid_classification li {
-            font-size: 20px;
-            font-family: "NotoSerifTC-Bold";
-            padding: 0px 10px;
-            color: #423838
-        }
-
-        .paid_wrap .container {
-            width: 1200px;
-            display: flex;
-            margin-top: 50px;
-            margin-bottom: 100px;
-            position: relative;
-        }
-
-        .paid_wrap .item {
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
-            border-radius: 5px;
-            width: 33.333333%;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            margin: 0px 15px;
-        }
-
-        .paid_wrap .item_img {
-            overflow: hidden;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-        }
-
-        .paid_wrap .item_img img {
-            max-height: 280px;
-        }
-
-        .paid .item_title {
-            display: flex;
-            padding: 5px;
-        }
-
-        .paid .item_title p {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #423838;
-            font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
-        }
-
-        .paid span {
-            color: #423838;
-            font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
-        }
-
-        .paid .item_pricedow {
-            display: flex;
-            justify-content: space-evenly;
-            box-sizing: border-box;
-            padding: 10px 20px;
-        }
-
-        .paid .price {
-            flex-grow: 1;
-        }
-
-        .paid .item_title .author_img {
-            margin-right: 10px;
-        }
-
-        .paid .item_title .author_img img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-
-        .paid .item_bottom {
-            padding: 5px;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .paid .item_collection {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .paid .item_collection img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .paid .item_collection span {
-            padding: 0px 10px;
-        }
-
-        .paid .item_function {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .paid .item_function>img {
-            width: 28px;
-            height: 28px;
-            padding: 10px 0px;
-        }
-
-        .paid .item_function:hover>img,
-        .free .item_function:hover>img {
-            transform: scale(1.1);
-        }
-
-        .paid .item_dow {
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-            box-sizing: border-box;
-        }
-
-        .paid .item_dow img {
-            width: 18px;
-            height: 18px;
-            padding: 0px 5px;
-        }
-
-        .paid .item_dow span {
-            color: #888888;
-        }
-
-        .paid .price h2 {
-            color: #f1d752;
-            text-shadow: 0.05em 0.05em rgb(0, 0, 0);
-            font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
-        }
-
-        .paid .item a {
-            text-decoration: none;
-        }
-
-        .paid .item a:hover>.item_img img {
-            transform: scale(1.05);
-            transition: 0.5s;
-        }
-
-        .paid_wrap .item:nth-child(5),
-        .paid_wrap .item:nth-child(3) {
-            opacity: 0.8;
-            transform: scale(0.85);
-        }
-
-        .paid .arrow_before,
-        .free .arrow_before {
-            width: 45px;
-            height: 45px;
-            background-color: #423838;
-            border-radius: 50%;
             position: absolute;
             z-index: 1;
-            top: 45%;
-            left: 33%;
+            top: calc(50% - 20px);
         }
 
-        .paid .arrow_before p,
-        .free .arrow_before p {
-            font-size: 45px;
-            font-weight: bold;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #ffffff;
+        .modelparts .owl-nav .owl-prev:hover,
+        .modelparts .owl-nav .owl-next:hover {
+            opacity: 1;
         }
 
-        .paid .arrow_after,
-        .free .arrow_after {
-            width: 45px;
-            height: 45px;
-            background-color: #423838;
-            border-radius: 50%;
+        .modelparts .owl-nav .owl-prev {
             position: absolute;
-            z-index: 1;
-            top: 45%;
-            right: 33%;
+            opacity: 0.6;
+            left: 15px;
         }
 
-        .paid .arrow_after p,
-        .free .arrow_after p {
-            font-size: 45px;
-            font-weight: bold;
-            text-align: center;
+        .modelparts .owl-nav .owl-next {
+            position: absolute;
+            opacity: 0.6;
+            left: calc(20% - 65px);
+        }
+
+        .modelparts .item_title p {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            color: #ffffff;
+            color: #423838;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 16px;
+        }
+
+        .needs {
+            height: 300px;
         }
 
         .author {
-            padding-top: 50px;
-            padding-bottom: 50px;
-            background-color: #f8f8f8;
-            margin: auto;
+            padding-top: 120px;
+            padding-bottom: 100px;
+            background-image: url(pic/bgimg3.jpg);
+            clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
         }
 
         .author_rank {
             width: 1200px;
-            border-radius: 15px;
-            box-sizing: border-box;
             margin: auto;
             display: flex;
             flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .author_rank_title {
-            width: 600px;
             position: relative;
         }
 
         .author h1 {
             font-size: 28px;
+            color: #FFFFFF;
+            text-shadow: rgb(66, 56, 56) 4px 4px 4px;
             font-family: "NotoSerifTC-Bold";
-            color: #ffffff;
             position: absolute;
             top: 20px;
-            right: 30px;
+            right: 40px;
+            z-index: 1;
         }
 
         .author .triangle {
-            width: 0;
-            height: 0;
-            border-top: 90px solid #766e6d;
-            border-left: 600px solid transparent;
+            width: 600px;
+            height: 90px;
+            border-radius: 5px;
+            background-color: #766e6d;
+            clip-path: polygon(38% 0, 100% 0, 100% 100%, 10% 32%);
         }
 
         .author .author_rank_end {
             display: flex;
             justify-content: flex-end;
+            position: relative;
         }
 
-        .author .triangle_right_wrap {
-            width: 100px;
-            height: 20px;
-            background-color: #f8f8f8;
+        .triangle_reverse {
+            width: 100%;
+            height: 140px;
+            border-radius: 5px;
+            background: #D1C3BC;
+            clip-path: polygon(0% 0%, 12% 0, 100% 62%, 50% 100%, 0 60%);
             position: relative;
-            left: 100px;
+        }
+
+        .author_rank_wrap {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .author_rank_wrap .first {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            top: 15px;
             z-index: 1;
         }
 
-        .author .triangle_left {
-            width: 0;
-            height: 0;
-            border-bottom: 50px solid #f8f8f8;
-            border-right: 100px solid transparent;
-            position: absolute;
-            right: -100px;
-        }
-
-        .author .triangle_reverse_wrap {
-            width: 1200px;
+        .author_rank_wrap .second {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             position: relative;
-            margin-top: 150px;
+            top: 50px;
+            z-index: 1;
         }
 
-        .author .triangle_reverse {
-            width: 0;
-            height: 0;
-            border-bottom: 150px solid #cac9c9;
-            border-right: 1200px solid transparent;
-        }
-
-        .triangle_reverse_cover {
-            width: 0;
-            height: 0;
-            border-bottom: 80px solid #f8f8f8;
-            border-right: 600px solid transparent;
-            position: absolute;
-            bottom: 0;
-        }
-
-        .author .triangle_left_reverse {
-            width: 0;
-            height: 0;
-            border-bottom: 100px solid #f8f8f8;
-            border-left: 250px solid transparent;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-
-        .author .first .author_img img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
-        }
-
-        .author .first .author_img {
-            width: 100%;
-        }
-
-        .author .first {
+        .author_rank_wrap .third {
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: absolute;
-            bottom: 120px;
-            left: 10%;
-
+            position: relative;
+            top: 82px;
+            z-index: 1;
         }
 
-        .author .second .author_img img {
+        .author_rank_wrap .author_img {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
         }
 
-        .author .second .author_img {
+        .author_rank_wrap .author_img img {
+            width: 100%;
+            border-radius: 50%;
+            border: #ffffff 2px solid;
+            box-shadow: 0px 0px 5px 0.5px #766e6d;
+        }
+
+        .author_rank_wrap .trophy {
+            margin-top: 10px;
+            width: 100px;
+        }
+
+        .author_rank_wrap .trophy img {
             width: 100%;
         }
 
-        .author .second {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            bottom: 82px;
-            left: 35%;
-        }
-
-        .author .third .author_img img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
-        }
-
-        .author .third .author_img {
-            width: 100%;
-        }
-
-        .author .third {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            bottom: 45px;
-            left: 60%;
-        }
 
         .footer {
-            margin-top: 80px;
-            background-image: url(pic/bgimg.jpg);
+            background-image: url(pic/bgimgblack.jpg);
             background-size: cover;
-            border-top: #afafaf 3px solid;
+            clip-path: polygon(0 5%, 50% 25%, 100% 5%, 100% 100%, 0 100%);
+            margin-top: -100px;
         }
 
         .footer_wrap {
@@ -1137,7 +783,7 @@
             display: flex;
             margin: auto;
             box-sizing: border-box;
-            padding: 10px 20px;
+            padding: 100px 20px 20px 20px;
         }
 
         .service {
@@ -1148,18 +794,18 @@
 
         .service h3,
         .help h3 {
-            color: #423838;
-            font-family: "NotoSerifTC-Bold";
-            font-size: 18px;
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 20px;
             padding: 15px 15px 15px 0px;
         }
 
         .service a,
         .help a {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Regular";
             text-decoration: none;
-            font-size: 15px;
+            font-size: 16px;
             padding: 10px 0px;
         }
 
@@ -1184,25 +830,25 @@
         }
 
         .peoplesaid h2 {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
+            font-size: 22px;
             padding: 15px;
         }
 
         .peoplesaid p {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Regular";
-            font-size: 20px;
+            font-size: 22px;
             padding: 15px;
             text-align: center;
             line-height: 30px;
         }
 
         .peoplesaid h3 {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
+            font-size: 20px;
             padding: 15px;
         }
 
@@ -1210,7 +856,7 @@
             width: 20%;
             height: 1px;
             margin-top: 9px;
-            border-top: solid #423838 1px;
+            border-top: solid #ffffff 1px;
             flex-grow: 1;
         }
 
@@ -1218,7 +864,7 @@
             width: 20%;
             height: 1px;
             margin-top: 9px;
-            border-top: solid #423838 1px;
+            border-top: solid #ffffff 1px;
             flex-grow: 1;
         }
 
@@ -1227,9 +873,9 @@
         }
 
         .focusus h3 {
-            color: #423838;
-            font-family: "NotoSerifTC-Bold";
-            font-size: 18px;
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
+            font-size: 20px;
             padding: 15px 15px 15px 0px;
         }
 
@@ -1291,7 +937,7 @@
     <div class="banner">
         <div class="search">
             <div class="search_wrap">
-                <input type="text" class="search_text" placeholder="搜尋世上最美好的模型">
+                <input type="search" class="search_text" placeholder="搜尋世上最美好的模型">
                 <select>
                     <option>搜模型</option>
                     <option>搜作者</option>
@@ -1308,311 +954,163 @@
     <section class="hot">
         <div class="hotmodel">
             <div class="hotmodel_title">
-                <div class="triangle"></div>
-                <div class="triangle_right">
-                    <div class="triangle_left"></div>
+                <div class="triangle">
+                    <a href="hot.html">
+                        <h1>熱門模型</h1>
+                    </a>
                 </div>
-                <h1>熱門模型</h1>
             </div>
             <div class="hot_rotaion">
                 <div class="firstrow">
                     <div class="hotmodel_container">
-                        <div class="item">
-                            <h3>機械手臂</h3>
-                            <p>這是“InMoov”，您可以列印和製作動畫的機械手。如果你有一些建構技能，這個模型適合你！！</p>
-                        </div>
-                        <div class="item_img"><a href="model.html"><img src="pic/arm.jpg"></a></div>
+                        <a href="model.html">
+                            <div class="item">
+                                <h3>機械手臂</h3>
+                                <p>這是“InMoov”，您可以列印和製作動畫的機械手。如果你有一些建構技能，這個模型適合你！！</p>
+                            </div>
+                            <div class="item_img"><img src="pic/arm.jpg"></div>
+                        </a>
                     </div>
                     <div class="hotmodel_container">
-                        <div class="item">
-                            <h3>自走車</h3>
-                            <p>自走車是一部基礎型的輪型機器人，採用Arduino Nano控制核心。支援Arduino Open Source資源。</p>
-                        </div>
-                        <div class="item_img"><a href="model.html"><img src="pic/car.jpg"></a></div>
+                        <a href="model.html">
+                            <div class="item">
+                                <h3>自走車</h3>
+                                <p>自走車是一部基礎型的輪型機器人，採用Arduino Nano控制核心。支援Arduino Open Source資源。</p>
+                            </div>
+                            <div class="item_img"><img src="pic/car.jpg"></div>
+                        </a>
                     </div>
                 </div>
                 <div class="secondrow">
                     <div class="hotmodel_container_1">
-                        <div class="item">
-                            <h3>口罩支架</h3>
-                            <p>這是“InMoov”，您可以列印和製作動畫的機械手。如果你有一些建構技能，這個模型適合你！！</p>
-                        </div>
-                        <div class="item_img"><a href="model.html"><img src="pic/facialmask.jpg"></a></div>
+                        <a href="model.html">
+                            <div class="item">
+                                <h3>口罩支架</h3>
+                                <p>這是“InMoov”，您可以列印和製作動畫的機械手。如果你有一些建構技能，這個模型適合你！！</p>
+                            </div>
+                            <div class="item_img"><img src="pic/facialmask.jpg"></div>
+                        </a>
                     </div>
                     <div class="hotmodel_container_2">
-                        <div class="item">
-                            <h3>鋼鐵人</h3>
-                            <p>這個模型是易於易於列印，易於構建。其中我們提供包括零件清單、接線圖和運行的 Arduino 代碼。</p>
-                        </div>
-                        <div class="item_img"><a href="model.html"><img src="pic/IronMan.jpg"></a></div>
+                        <a href="model.html">
+                            <div class="item">
+                                <h3>鋼鐵人</h3>
+                                <p>這個模型是易於列印，易於構建。其中我們提供包括零件清單、接線圖和運行的 Arduino 代碼。</p>
+                            </div>
+                            <div class="item_img"><img src="pic/IronMan.jpg"></div>
+                        </a>
                     </div>
                     <div class="hotmodel_container_3">
-                        <div class="item">
-                            <h3>卡拉卡拉</h3>
-                            <p>這麼可愛的模型，提供詳細的參數參考，趕快下載來列印吧!!!</p>
-                        </div>
-                        <div class="item_img"><a href="model.html"><img src="pic/PXL.jpg"></a></div>
+                        <a href="model.html">
+                            <div class="item">
+                                <h3>卡拉卡拉</h3>
+                                <p>這麼可愛的模型，提供詳細的參數參考，趕快下載來列印吧!!!</p>
+                            </div>
+                            <div class="item_img"><img src="pic/PXL.jpg"></div>
+                        </a>
                     </div>
                 </div>
                 <div class="thirdrow">
                     <div class="hotmodel_container">
-                        <div class="item">
-                            <h3>立方體</h3>
-                            <p>立方體作為最基礎的模型，用於檢查機器校正與否非常好用，還不來下載嗎?</p>
-                        </div>
-                        <div class="item_img"><a href="model.html"><img src="pic/cube.jpg"></a></div>
+                        <a href="model.html">
+                            <div class="item">
+                                <h3>立方體</h3>
+                                <p>立方體作為最基礎的模型，用於檢查機器校正與否非常好用，還不來下載嗎?</p>
+                            </div>
+                            <div class="item_img"><img src="pic/cube.jpg"></div>
+                        </a>
                     </div>
                     <div class="hotmodel_container">
-                        <div class="item">
-                            <h3>微型飛行器</h3>
-                            <p>這個模型不會花你太多時間來列印，但在寫程式部分可能會卡關，不過別擔心我們提供原始碼與接線幫助。</p>
-                        </div>
-                        <div class="item_img"><a href="model.html"><img src="pic/Aircraft.jpg"></a></div>
+                        <a href="model.html">
+                            <div class="item">
+                                <h3>微型飛行器</h3>
+                                <p>這個模型不會花你太多時間來列印，但在寫程式部分可能會卡關，不過別擔心我們提供原始碼與接線幫助。</p>
+                            </div>
+                            <div class="item_img"><img src="pic/Aircraft.jpg"></div>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="triangle_reverse_end">
-                <div class="triangle_right_reverse_wrap">
-                    <div class="triangle_right_reverse">
-                        <div class="triangle_left_reverse"></div>
-                    </div>
-                </div>
                 <div class="triangle_reverse"></div>
             </div>
         </div>
     </section>
-    <section class="free">
-        <div class="free_wrap">
-            <div class="free_title">
-                <h1>免費資源</h1>
-                <div class="free_classification">
+    <section class="modelparts">
+        <div class="modelparts_wrap">
+            <div class="modelparts_title">
+                <div class="triangle">
+                    <a href="classification.html">
+                        <h1>模型分類</h1>
+                    </a>
+                </div>
+                <div class="modelparts_classification">
                     <ul>
-                        <li class="free3d"><a href="#">3D列印機</a></li>
-                        <li class="freeart"><a href="#">藝術</a></li>
-                        <li class="freehome"><a href="#">家用</a></li>
-                        <li class="freekit"><a href="#">工具</a></li>
-                        <li class="freetoy"><a href="#">玩具</a></li>
-                        <li class="freeother"><a href="#">其他</a></li>
+                        <li class="modelpartsmove"><a href="#one">3D列印機</a></li>
+                        <li class="modelpartsmove"><a href="#two">藝術</a></li>
+                        <li class="modelpartsmove"><a href="#three">家用</a></li>
+                        <li class="modelpartsmove"><a href="#four">工具</a></li>
+                        <li class="modelpartsmove"><a href="#five">玩具</a></li>
+                        <li class="modelpartsmove"><a href="#six">其他</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="container">
-                <a href="#">
-                    <div class="arrow_before">
-                        <p>&lt;</p>
-                    </div>
+        </div>
+        <div class="owl-carousel owl-theme owl-loaded">
+            <div class="item" data-hash="one">
+                <div class="info">
+                    <img src="pic/author1.PNG">
+                    <h3>自製3D列印機</h3>
+                </div>
+                <a href="model.html">
+                    <img src="pic/3dprinter.jpg">
                 </a>
-                <a href="#">
-                    <div class="arrow_after">
-                        <p>&gt;</p>
-                    </div>
+            </div>
+            <div class="item" data-hash="two">
+                <div class="info">
+                    <img src="pic/author10.jpg">
+                    <h3>藝術花瓶</h3>
+                </div>
+                <a href="model.html"><img src="pic/tulpimg.jpg">
                 </a>
-                <div class="item">
-                    <a href="model.html">
-                        <div class="item_title">
-                            <div class="author_img"><img src="pic/author1.PNG"></div>
-                            <p>ender 3 pro 1:12</p>
-                        </div>
-                        <div class="item_img"><img src="pic/ender3.jpg"></div>
-                        <div class="item_pricedow">
-                            <div class="price">
-                                <h2><span><s>NT$???</s></span> 免費!</h2>
-                            </div>
-                            <div class="item_dow">
-                                <img src="pic/download.png">
-                                <span>24106</span>
-                            </div>
-                        </div>
-                        <div class="item_bottom">
-                            <div class="item_collection">
-                                <img src="pic/collection.png">
-                                <span>加入收藏</span>
-                            </div>
-                            <div class="item_function">
-                                <img src="pic/share.png">
-                            </div>
-                        </div>
-                    </a>
+            </div>
+            <div class="item" data-hash="three">
+                <div class="info">
+                    <img src="pic/author11.jpg">
+                    <h3>鬧鐘外殼支架</h3>
                 </div>
-                <div class="item">
-                    <a href="model.html">
-                        <div class="item_title">
-                            <div class="author_img"><img src="pic/author2.PNG"></div>
-                            <p>3d printer</p>
-                        </div>
-                        <div class="item_img"><img src="pic/3dprinter.jpg"></div>
-                        <div class="item_pricedow">
-                            <div class="price">
-                                <h2><span><s>NT$???</s></span> 免費!</h2>
-                            </div>
-                            <div class="item_dow">
-                                <img src="pic/download.png">
-                                <span>19506</span>
-                            </div>
-                        </div>
-                        <div class="item_bottom">
-                            <div class="item_collection">
-                                <img src="pic/collection.png">
-                                <span>加入收藏</span>
-                            </div>
-                            <div class="item_function">
-                                <img src="pic/share.png">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="model.html">
-                        <div class="item_title">
-                            <div class="author_img"><img src="pic/author3.PNG"></div>
-                            <p>diy cnc</p>
-                        </div>
-                        <div class="item_img"><img src="pic/cnc.jpg"></div>
-                        <div class="item_pricedow">
-                            <div class="price">
-                                <h2><span><s>NT$???</s></span> 免費!</h2>
-                            </div>
-                            <div class="item_dow">
-                                <img src="pic/download.png">
-                                <span>10506</span>
-                            </div>
-                        </div>
-                        <div class="item_bottom">
-                            <div class="item_collection">
-                                <img src="pic/collection.png">
-                                <span>加入收藏</span>
-                            </div>
-                            <div class="item_function">
-                                <img src="pic/share.png">
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <a href="model.html"><img src="pic/clock.jpg"></a>
+            </div>
+            <div class="item" data-hash="four">
+                <div class="info">
+                    <img src="pic/author14.jpg">
+                    <h3>板手</h3>
+                </div><a href="model.html"><img src="pic/kit.jpg"></a>
+            </div>
+            <div class="item" data-hash="five">
+                <div class="info">
+                    <img src="pic/author5.PNG">
+                    <h3>旋轉陀螺</h3>
+                </div><a href="model.html"><img src="pic/IMG_3931jpg.jpg"></a>
+            </div>
+            <div class="item" data-hash="six">
+                <div class="info">
+                    <img src="pic/author6.PNG">
+                    <h3>口罩支架</h3>
+                </div><a href="model.html"><img src="pic/facialmask.jpg"></a>
             </div>
         </div>
     </section>
-    <section class="paid">
-        <div class="paid_wrap">
-            <div class="paid_title">
-                <h1>付費資源</h1>
-                <div class="paid_classification">
-                    <ul>
-                        <li class="paid3d"><a href="#">3D列印機</a></li>
-                        <li class="paidart"><a href="#">藝術</a></li>
-                        <li class="paidhome"><a href="#">家用</a></li>
-                        <li class="paidkit"><a href="#">工具</a></li>
-                        <li class="paidtoy"><a href="#">玩具</a></li>
-                        <li class="paidother"><a href="#">其他</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="container">
-                <a href="#">
-                    <div class="arrow_before">
-                        <p>&lt;</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="arrow_after">
-                        <p>&gt;</p>
-                    </div>
-                </a>
-                <div class="item">
-                    <a href="model.html">
-                        <div class="item_title">
-                            <div class="author_img"><img src="pic/author5.PNG"></div>
-                            <p>ender 3 pro 1:12</p>
-                        </div>
-                        <div class="item_img"><img src="pic/jaloof4.jpg"></div>
-                        <div class="item_pricedow">
-                            <div class="price">
-                                <h2><span><s>NT$80</s></span> 40</h2>
-                            </div>
-                            <div class="item_dow">
-                                <img src="pic/download.png">
-                                <span>9456</span>
-                            </div>
-                        </div>
-                        <div class="item_bottom">
-                            <div class="item_collection">
-                                <img src="pic/collection.png">
-                                <span>加入收藏</span>
-                            </div>
-                            <div class="item_function">
-                                <img src="pic/share.png">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="model.html">
-                        <div class="item_title">
-                            <div class="author_img"><img src="pic/author4.PNG"></div>
-                            <p>3d printer</p>
-                        </div>
-                        <div class="item_img">
-                            <img src="pic/monster.jpg">
-                        </div>
-                        <div class="item_pricedow">
-                            <div class="price">
-                                <h2><span><s>NT$150</s></span> 100</h2>
-                            </div>
-                            <div class="item_dow">
-                                <img src="pic/download.png">
-                                <span>19506</span>
-                            </div>
-                        </div>
-                        <div class="item_bottom">
-                            <div class="item_collection">
-                                <img src="pic/collection.png">
-                                <span>加入收藏</span>
-                            </div>
-                            <div class="item_function">
-                                <img src="pic/share.png">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="model.html">
-                        <div class="item_title">
-                            <div class="author_img"><img src="pic/author6.PNG"></div>
-                            <p>diy cnc</p>
-                        </div>
-                        <div class="item_img"><img src="pic/stimp.jpg"></div>
-                        <div class="item_pricedow">
-                            <div class="price">
-                                <h2><span><s>NT$120</s></span> 80</h2>
-                            </div>
-                            <div class="item_dow">
-                                <img src="pic/download.png">
-                                <span>5506</span>
-                            </div>
-                        </div>
-                        <div class="item_bottom">
-                            <div class="item_collection">
-                                <img src="pic/collection.png">
-                                <span>加入收藏</span>
-                            </div>
-                            <div class="item_function">
-                                <img src="pic/share.png">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <section class="needs">
+
     </section>
     <section class="author">
         <div class="author_rank">
             <div class="author_rank_end">
-                <div class="triangle_right_wrap">
-                    <div class="triangle_left"></div>
-                </div>
                 <div class="triangle"></div>
                 <h1>作者排名</h1>
             </div>
-            <div class="triangle_reverse_wrap">
+            <div class="author_rank_wrap">
                 <div class="first">
                     <div class="author_img"><a href="author.html"><img src="pic/author4.PNG"></a></div>
                     <div class="trophy"><img src="pic/Vector.png"></div>
@@ -1625,11 +1123,8 @@
                     <div class="author_img"><a href="author.html"><img src="pic/author7.PNG"></a></div>
                     <div class="trophy"><img src="pic/Vector3.png"></div>
                 </div>
-                <div class="triangle_reverse_cover"></div>
-                <div class="triangle_reverse">
-                    <div class="triangle_left_reverse"></div>
-                </div>
             </div>
+            <div class="triangle_reverse"></div>
         </div>
         </div>
     </section>
@@ -1671,6 +1166,65 @@
             <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            $(".owl-carousel .item").on("mouseleave", function (e) {
+                owl.trigger("play.owl.autoplay", [3000]);
+            });
+
+            $(".owl-carousel .item").on("mouseenter", function (e) {
+                owl.trigger("stop.owl.autoplay", [3000]);
+            });
+
+            $(".modelpartsmove").on("mouseleave", function (e) {
+                owl.trigger("play.owl.autoplay", [3000]);
+            });
+
+            $(".modelpartsmove").on("mouseenter", function (e) {
+                owl.trigger("stop.owl.autoplay", [3000]);
+            });
+
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                dots: false,
+                center: false,
+                URLhashListener: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: false,
+                startPosition: 'URLHash',
+                smartSpeed: 2000,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1200: {
+                        items: 5
+                    }
+                }
+            });
+            $(".owl-prev").on("mouseleave", function (e) {
+                owl.trigger("play.owl.autoplay", [3000]);
+            });
+
+            $(".owl-prev").on("mouseenter", function (e) {
+                owl.trigger("stop.owl.autoplay", [3000]);
+            });
+            $(".owl-next").on("mouseleave", function (e) {
+                owl.trigger("play.owl.autoplay", [3000]);
+            });
+
+            $(".owl-next").on("mouseenter", function (e) {
+                owl.trigger("stop.owl.autoplay", [3000]);
+            });
+        })
+    </script>
 </body>
 
 </html>
