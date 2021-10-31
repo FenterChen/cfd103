@@ -200,11 +200,11 @@
 
 .model_img {
     margin: auto;
-    width: 70%;
+    max-width: 70%;
 }
 
 .model_img img {
-    width: 100%;
+    max-width: 100%;
 }
 .model_img_attached ul {
     padding: 1px;
