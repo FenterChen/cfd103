@@ -176,10 +176,28 @@
             max-height: 600px;
             display: flex;
             justify-content: center;
+            position: relative;
         }
 
         .model_img img {
             height: 100%;
+        }
+
+        .scence {
+            width: 5%;
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+
+        .scence img {
+            width: 100%;
+            vertical-align: top;
+            opacity: 0.5;
+        }
+
+        .scence img:hover {
+            opacity: 1;
         }
 
         .model_img_attached {
@@ -266,7 +284,6 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
         .model_function_wrap {
@@ -276,8 +293,10 @@
             box-sizing: border-box;
             padding: 10px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
+            flex-direction: column;
+            position: sticky;
+            top: 28%;
         }
 
         .model_function p {
@@ -324,7 +343,6 @@
         }
 
         .model_description {
-            width: 1160px;
             margin: auto;
             margin-top: 20px;
             padding: 20px;
@@ -619,7 +637,9 @@
                         <p>by Boxandloop 2020/10/21</p>
                     </div>
                 </div>
+
                 <div class="model_img">
+                    <div class="scence"><a href="3d.html"><img src="pic/cube.png"></a></div>
                     <img src="pic/IronMan.jpg">
                 </div>
                 <div class="model_img_attached">
@@ -641,6 +661,19 @@
                         <li><img src="pic/IronMan-5.jpg"></li>
                         <li><img src="pic/IronMan-6.jpg"></li>
                     </ul>
+                </div>
+                <div class="model_description">
+                    <h2>模型詳情</h2>
+                    <p>2020/09/12上傳更新:</p>
+                    <p>增加了接線影片更新眼睛在面罩關閉時閃爍和面罩打開時閃爍的原始碼稍微更新以調整大小說明。<br>伺服馬達安裝座應僅在 X 軸上縮放。</p>
+                    <br>
+                    <p>2020/11/05上傳更新:</p>
+                    <p>增加了一個由兩部分組成的尺寸環。用在200x200 毫米的床上平台列印。 將兩個部分黏起後測量尺寸。</p>
+                    <br>
+                    <p>2020/11/01上傳更新:</p>
+                    <p>增加了了可選的眼睛（可調光）。<br>現在有 2 個 PDF 說明。 一種是帶眼睛的頭盔，一種是沒有的。</p>
+                    <br>
+                    <p>這個模型是易於易於列印，易於構建。<br>其中我們提供包括零件清單、接線圖和運行的 Arduino 代碼。<br>隨附調整大小和組裝說明</p>
                 </div>
             </div>
             <div class="model_function">
@@ -685,19 +718,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="model_description">
-            <h2>模型詳情</h2>
-            <p>2020/09/12上傳更新:</p>
-            <p>增加了接線影片更新眼睛在面罩關閉時閃爍和面罩打開時閃爍的原始碼稍微更新以調整大小說明。 伺服馬達安裝座應僅在 X 軸上縮放。</p>
-            <br>
-            <p>2020/11/05上傳更新:</p>
-            <p>增加了一個由兩部分組成的尺寸環。用在200x200 毫米的床上平台列印。 將兩個部分黏起後測量尺寸。</p>
-            <br>
-            <p>2020/11/01上傳更新:</p>
-            <p>增加了了可選的眼睛（可調光）。<br>現在有 2 個 PDF 說明。 一種是帶眼睛的頭盔，一種是沒有的。</p>
-            <br>
-            <p>這個模型是易於易於列印，易於構建。其中我們提供包括零件清單、接線圖和運行的 Arduino 代碼。隨附調整大小和組裝說明</p>
         </div>
         <div class="model_comment">
             <h2>請<a href="#">登入</a>後再發表評論</h2>
