@@ -201,6 +201,7 @@
 .model_img {
     margin: auto;
     width: 70%;
+    max-height: 170px;
 }
 
 .model_img img {
@@ -212,6 +213,7 @@
 
 .model_img_attached ul li {
     width: 70%;
+    max-height: 40px;
     padding: 1px;
 }
 
