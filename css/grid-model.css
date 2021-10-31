@@ -199,8 +199,8 @@
 }
 
 .model_img {
-    margin: auto;
     width: 100%;
+    align-items: center;
 }
 
 .model_img img {
