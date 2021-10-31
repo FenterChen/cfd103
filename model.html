@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modle | PYV</title>
+    <title>Model | PYV</title>
     <link rel="shortcut icon" href="pic/pyv-favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="font/font.css">
-    <link rel="stylesheet" href="css/grid-search.css">
+    <link rel="stylesheet" href="css/grid-model.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <style>
         .header {
@@ -40,27 +40,16 @@
         }
 
         .modelpart_wrap {
-            width: 1200px;
             margin: auto;
             display: flex;
             box-sizing: border-box;
-            padding: 100px 20px 40px 20px;
         }
 
         .model_set {
-            width: 78.333333%;
             background: #fff;
             box-sizing: border-box;
             margin-right: 10px;
             border-radius: 5px;
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
-        }
-
-
-        .author_img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
         }
 
         .author_img img {
@@ -71,7 +60,6 @@
         .author_info {
             display: flex;
             align-items: center;
-            padding: 10px;
             box-sizing: border-box;
             border-bottom: solid 1px #afafaf;
         }
@@ -79,25 +67,17 @@
         .author_info .info h2 {
             color: #423838;
             font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
-            padding-bottom: 10px;
         }
 
         .author_info .info p {
             color: #afafaf;
             font-family: "NotoSerifTC-Regular";
-            font-size: 12px;
         }
 
         .model_img {
-            max-height: 600px;
             display: flex;
             justify-content: center;
             position: relative;
-        }
-
-        .model_img img {
-            height: 100%;
         }
 
         .scence {
@@ -126,14 +106,11 @@
             display: flex;
             border-top: solid 1px #afafaf;
             box-sizing: border-box;
-            padding: 10px;
         }
 
         .model_img_attached ul li {
             display: flex;
-            max-height: 100px;
             box-sizing: border-box;
-            padding: 10px;
         }
 
         .model_img_attached ul li img {
@@ -143,12 +120,9 @@
 
         .model_img_attached ul li img:hover {
             cursor: pointer;
-            border: solid 2px #766e6d;
         }
 
         .model_function {
-            width: 20%;
-            margin-left: 10px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -156,29 +130,22 @@
 
         .model_function_wrap {
             background: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
             box-sizing: border-box;
-            padding: 10px;
             display: flex;
             justify-content: center;
             flex-direction: column;
             position: sticky;
-            top: 28%;
         }
 
         .model_function p {
             color: #766e6d;
             font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
             text-align: center;
         }
 
         .model_function h3 {
             color: #423838;
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
-            line-height: 26px;
             text-align: center;
         }
 
@@ -189,56 +156,37 @@
         .model_function_wrap .like {
             display: flex;
             align-items: center;
-            padding: 10px;
             box-sizing: border-box;
         }
 
         .model_function_wrap .descri {
             padding: 0px 20px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .model_function_wrap a {
             text-decoration: none;
         }
 
-        .model_function_wrap img {
-            width: 40px;
-            height: 40px;
-        }
-
         .model_description {
             margin: auto;
-            padding: 20px;
             box-sizing: border-box;
             background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
         }
 
         .model_description h2 {
             color: #423838;
             font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
-            padding-bottom: 10px;
         }
 
         .model_description p {
             color: #423838;
             font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
-            line-height: 26px;
         }
 
         .model_comment>h2 {
             text-align: center;
-            padding: 30px 0px 20px 0px;
             color: #423838;
             font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
         }
 
         .model_comment a {
@@ -248,23 +196,14 @@
 
         .model_comment_wrap {
             margin: auto;
-            margin: 0px 20px 0px 20px;
             box-sizing: border-box;
         }
 
         .model_comment .comment {
             padding: 20px;
-            box-sizing: border-box;
             margin-bottom: 20px;
-            background-color: #fff;
             border-radius: 5px;
             box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
-        }
-
-        .member_img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
         }
 
         .member_img img {
@@ -275,97 +214,73 @@
         .member_info {
             display: flex;
             align-items: center;
-            padding: 10px;
             box-sizing: border-box;
         }
 
         .member_info .info h2 {
             color: #423838;
-            line-height: 30px;
             font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
         }
 
         .member_info .info p {
             color: #afafaf;
             font-family: "NotoSerifTC-Regular";
-            font-size: 12px;
-        }
-
-        .txt {
-            height: 50px;
-            padding: 15px 0px 15px 0px;
-            border-bottom: solid 1px #afafaf;
         }
 
         .txt p {
             color: #423838;
             font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
         }
 
         .replies {
             display: flex;
             justify-content: flex-end;
-            padding: 10px;
         }
 
         .replies h3 {
             color: #423838;
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
         }
 
         .replies a {
             text-decoration: none;
         }
 
-        /*
+        /*footer*/
         .footer {
-            background-image: url(pic/bgimg.jpg);
+            background-image: url(pic/bgimgblack.jpg);
             background-size: cover;
-            border-top: #afafaf 3px solid;
         }
 
         .footer_wrap {
-            width: 1200px;
             display: flex;
             margin: auto;
             box-sizing: border-box;
-            padding: 10px 20px;
         }
 
         .service {
-            width: 12.5%;
             display: flex;
             flex-direction: column;
         }
 
         .service h3,
         .help h3 {
-            color: #423838;
-            font-family: "NotoSerifTC-Bold";
-            font-size: 18px;
-            padding: 15px 15px 15px 0px;
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
         }
 
         .service a,
         .help a {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Regular";
             text-decoration: none;
-            font-size: 15px;
-            padding: 10px 0px;
         }
 
         .help {
-            width: 12.5%;
-            display: flex;
             flex-direction: column
         }
 
         .peoplesaid {
-            width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -375,63 +290,26 @@
         .peoplesaid_wrap {
             display: flex;
             align-items: center;
-            width: 80%;
         }
 
         .peoplesaid h2 {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
-            padding: 15px;
         }
 
         .peoplesaid p {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Regular";
-            font-size: 20px;
-            padding: 15px;
-            text-align: center;
-            line-height: 30px;
         }
 
         .peoplesaid h3 {
-            color: #423838;
+            color: #ffffff;
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
-            padding: 15px;
-        }
-
-        .right_line {
-            width: 20%;
-            height: 1px;
-            margin-top: 9px;
-            border-top: solid #423838 1px;
-            flex-grow: 1;
-        }
-
-        .left_line {
-            width: 20%;
-            height: 1px;
-            margin-top: 9px;
-            border-top: solid #423838 1px;
-            flex-grow: 1;
-        }
-
-        .focusus {
-            width: 25%;
         }
 
         .focusus h3 {
-            color: #423838;
-            font-family: "NotoSerifTC-Bold";
-            font-size: 18px;
-            padding: 15px 15px 15px 0px;
-        }
-
-        .focusus a img {
-            width: 25px;
-            height: 25px;
-            padding-right: 10px;
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
         }
 
         .copyright {
@@ -439,14 +317,11 @@
         }
 
         .copyright_wrap {
-            width: 1200px;
             margin: auto;
-            padding: 5px 20px;
             box-sizing: border-box;
         }
 
         .copyright_wrap p {
-            font-size: 14px;
             font-family: "NotoSerifTC-Light";
             color: #e0e0e0;
         }
@@ -454,7 +329,6 @@
         select:hover {
             cursor: pointer;
         }
-        */
     </style>
 </head>
 
@@ -642,7 +516,6 @@
             </div>
         </div>
     </section>
-    <!--
     <div class="footer">
         <div class="footer_wrap">
             <div class="service">
@@ -650,7 +523,7 @@
                 <a href="#">熱門模型</a>
                 <a href="#">模型分類</a>
                 <a href="#">作者排名</a>
-                <a href="#">代課鍵模與代印</a>
+                <a href="#">需求X挑戰</a>
                 <a href="#">關於我們</a>
             </div>
             <div class="help">
@@ -680,7 +553,7 @@
         <div class="copyright_wrap">
             <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
         </div>
-    </div> -->
+    </div>
 
     <script>
         $(document).ready(function () {
@@ -689,17 +562,17 @@
                 if (left < 0) {
                     $("#header_wrap_grow").animate({
                         left: '0%',
-                    }, 1000);
+                    }, 500);
                     $("#user_related").animate({
                         left: '0%',
-                    }, 1000);
+                    }, 500);
                 } else {
                     $("#header_wrap_grow").animate({
                         left: "-51%",
-                    }, 1000);
+                    }, 500);
                     $("#user_related").animate({
                         left: "-51%",
-                    }, 1000);
+                    }, 500);
                 }
             });
             $("#navSearch").on("change", function () {
