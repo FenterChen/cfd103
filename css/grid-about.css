@@ -166,10 +166,75 @@
         margin: 0px 2px;
     }
 
+     /*banner*/
+.banner {
+    margin-top: -10%;
+    margin-bottom: 20px;
+}
+
+.company_abstract {
+    width: 100%;
+}
+
+.company_abstract .logo img {
+    width: 25%;
+}
+
+.company_abstract h1 {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.company_abstract p {
+    font-size: 12px;
+    padding: 5px 20px;
+    line-height: 20px;
+}
+
+
+.bg img {
+    width: 100%;
+    height: 50px;
+}
+
+.bg h1 {
+    font-size: 20px;
+    top: 35px;
+}
+
+.forecast {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.future {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.future img {
+    border-radius: 10px;
+}
+
+.txt {
+    width: 40%;
+    border-radius: 10px;
+    left: -3%;
+    padding: 3px;
+    line-height: 16px;
+    font-size: 12px;
+    text-indent: 2em;
+}
+.txt p:nth-child(2){
+    display: none;
+}
+
 /*footer*/
 .footer {
     clip-path: polygon(0 5%, 50% 15%, 100% 5%, 100% 100%, 0 100%);
-    margin-top: -60px;
+    margin-top: -100px;
 }
 
 .footer_wrap {
@@ -435,6 +500,68 @@
         margin: 0px 2px;
     }
 
+    /*banner*/
+.banner {
+    margin-top: -15%;
+    margin-bottom: 60px;
+}
+
+.company_abstract {
+    width: 100%;
+}
+
+.company_abstract .logo img {
+    width: 25%;
+}
+
+.company_abstract h1 {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.company_abstract p {
+    font-size: 16px;
+    padding: 10px 0px;
+    line-height: 40px;
+}
+
+
+.bg img {
+    width: 100%;
+    height: 150px;
+}
+
+.bg h1 {
+    font-size: 36px;
+    top: 100px;
+}
+
+.forecast {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.future {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.future img {
+    border-radius: 20px;
+}
+
+.txt {
+    width: 35%;
+    border-radius: 20px;
+    left: -3%;
+    padding: 20px;
+    line-height: 22px;
+    font-size: 14px;
+    text-indent: 2em;
+}
+
 /*footer*/
 .footer {
     clip-path: polygon(0 5%, 50% 20%, 100% 5%, 100% 100%, 0 100%);
@@ -640,6 +767,69 @@
         margin: 0px 5px;
     }
 
+/*banner*/
+.banner {
+    margin-top: -18%;
+    margin-bottom: 60px;
+}
+
+.company_abstract {
+    width: 100%;
+}
+
+.company_abstract .logo img {
+    width: 25%;
+}
+
+.company_abstract h1 {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.company_abstract p {
+    font-size: 20px;
+    padding: 10px 0px;
+    line-height: 40px;
+}
+
+
+.bg img {
+    width: 100%;
+    height: 150px;
+}
+
+.bg h1 {
+    font-size: 36px;
+    top: 100px;
+}
+
+.forecast {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.future {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.future img {
+    border-radius: 20px;
+}
+
+.txt {
+    width: 35%;
+    height: 280px;
+    border-radius: 20px;
+    left: -3%;
+    padding: 20px;
+    line-height: 30px;
+    font-size: 18px;
+    text-indent: 2em;
+}
+
 /*footer*/
 .footer {
     clip-path: polygon(0 5%, 50% 25%, 100% 5%, 100% 100%, 0 100%);
@@ -841,6 +1031,67 @@
         margin: 0px 5px;
     }
 
+    /*banner*/
+    .banner {
+        margin-top: -18%;
+        margin-bottom: 60px;
+    }
+
+    .company_abstract {
+        width: 1200px;
+    }
+
+    .company_abstract .logo img {
+        width: 25%;
+    }
+
+    .company_abstract h1 {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    .company_abstract p {
+        font-size: 20px;
+        padding: 10px 0px;
+        line-height: 40px;
+    }
+
+
+    .bg img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .bg h1 {
+        font-size: 36px;
+        top: 100px;
+    }
+
+    .forecast {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 50px;
+        align-items: center;
+    }
+    
+    .future {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .future img {
+        border-radius: 20px;
+    }
+    
+    .txt {
+        width: 35%;
+        border-radius: 20px;
+        left: -3%;
+        padding: 20px;
+        line-height: 30px;
+        font-size: 18px;
+        text-indent: 2em;
+    }
 
 /*footer*/
 .footer {
