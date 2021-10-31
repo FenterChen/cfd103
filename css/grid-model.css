@@ -200,18 +200,18 @@
 
 .model_img {
     margin: auto;
-    max-width: 70%;
+    width: 70%;
 }
 
 .model_img img {
-    max-width: 100%;
+    width: 100%;
 }
 .model_img_attached ul {
     padding: 1px;
 }
 
 .model_img_attached ul li {
-    max-height: 100px;
+    width: 70%;
     padding: 1px;
 }
 
