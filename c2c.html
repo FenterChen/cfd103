@@ -7,24 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C2c | PYV</title>
     <link rel="shortcut icon" href="pic/pyv-favicon.ico">
+    <link rel="stylesheet" href="css/grid-C2c.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="font/font.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
     <style>
-        .user_related ul {
-            display: flex;
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
-        .user_related a {
-            font-size: 14px;
-            font-family: "NotoSerifTC-Light";
-            color: #888888;
-            text-decoration: none;
-            margin: 0px 5px;
+        @keyframes passoff {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
 
         .header {
             position: fixed;
-            z-index: 2;
+            z-index: 10;
             top: 0;
             left: 0;
             width: 100%;
@@ -32,132 +42,65 @@
 
         .header_wrap {
             display: flex;
-            padding: 10px 30px;
+            align-items: center;
             background-image: url(pic/header-bgimg.png);
             background-size: cover;
             border-bottom: #afafaf 3px solid;
         }
 
-        .header_wrap>a {
-            width: 95px;
-        }
-
-        .header_wrap img {
-            width: 100%;
-        }
-
-        .header_wrap nav {
-            display: flex;
-            flex-grow: 1;
-        }
-
-        .header_wrap nav ul {
-            display: flex;
-            flex-grow: 1;
-            align-items: center;
-            padding-left: 30px;
-        }
-
-        .header_wrap nav ul a {
-            font-size: 18px;
+        .header_wrap_grow a,
+        .user_related a {
             text-decoration: none;
-            font-family: "NotoSerifTC-Regular";
-            text-shadow: 0.05em 0.05em #cac9c9;
-            color: #423838;
-            padding: 0px 10px;
         }
 
         .banner {
             position: relative;
             background-image: url(pic/bgimg.jpg);
             background-size: cover;
-            padding: 100px 20px 0px 20px;
         }
 
         .banner_title {
             color: rgb(66, 56, 56);
-            text-shadow: rgb(255, 255, 255) 0px 1px 0px, rgb(255, 255, 255) 0px 2px 0px, rgb(255, 255, 255) 0px 2.5px 0px, rgb(255, 255, 255) 0px 3.5px 0px, rgb(255, 255, 255) 0px 4px 0px;
             text-align: center;
             font-family: "NotoSerifTC-Bold";
-            font-size: 28px;
-            padding-bottom: 20px;
-            padding-top: 15px;
         }
 
         .banner_title_wrap {
-            width: 100%;
-            height: 100%;
             box-sizing: border-box;
-            padding: 5px;
-            margin-bottom: 10px;
             display: flex;
         }
 
         .banner_title_wrap .needs {
-            height: 100%;
             position: absolute;
-            right: -100px;
-            top: -1px;
             display: flex;
             justify-content: center;
         }
 
-
-        .banner_title_wrap .needs button {
-            border: none;
-            background-color: #766e6d;
-            color: #ffffff;
-            box-sizing: border-box;
-            border-radius: 5px;
-            font-size: 18px;
-            font-family: "NotoSerifTC-Bold";
-        }
-
-        .banner_title_wrap .needs button:hover {
-            cursor: pointer;
-            background-color: #888888;
-        }
-
-        .banner_title h1 {
-            margin-bottom: 30px;
-        }
-
-        .search {
-            width: 40%;
+        .banner .search {
             margin: auto;
-            padding: 3px;
-            border-radius: 10px;
             background-color: #fff;
-            box-shadow: 0px 0px 7px 0.5px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.5px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.5px #423838;
-            -o-box-shadow: 0px 0px 7px 0.5px #423838;
             position: relative;
         }
 
-        .search_wrap {
+        .banner .search_wrap {
             display: flex;
-            padding: 0px 5px;
             box-sizing: border-box;
         }
 
-        .search_img {
-            width: 8%;
-            padding: 5px;
+        .banner .search_img {
             border: none;
             box-sizing: border-box;
             cursor: pointer;
             background-color: transparent;
         }
 
-        .search img {
+        .banner .search img {
             width: 100%;
         }
 
-        .search_text {
+        .banner .search_text {
             width: 100%;
             flex-grow: 1;
-            font-size: 22px;
             font-family: "NotoSerifTC-Bold";
             color: #766e6d;
             background-color: transparent;
@@ -166,165 +109,28 @@
 
         }
 
-        .search select {
+        .banner .search select {
             background-color: #e0e0e0;
-            border: #e0e0e0 1px solid;
-            border-radius: 6px;
-            font-size: 18px;
             font-family: "NotoSerifTC-Regular";
             outline: none;
-            padding: 0px 5px;
-            margin: 0px 10px;
         }
 
         .banner_title>select {
             background-color: #e0e0e0;
-            border: #e0e0e0 1px solid;
-            border-radius: 6px;
-            font-size: 18px;
             font-family: "NotoSerifTC-Regular";
             outline: none;
-            padding: 0px 5px;
-            margin: 0px 10px;
-            box-shadow: 0px 0px 7px 0.3px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.3px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.3px #423838;
-            -o-box-shadow: 0px 0px 7px 0.3px #423838;
         }
 
-        .footer {
-            background-image: url(pic/bgimg.jpg);
-            background-size: cover;
-            border-top: #afafaf 3px solid;
-        }
-
-        .footer_wrap {
-            width: 1200px;
-            display: flex;
-            margin: auto;
+        .banner_title_wrap .needs button {
+            border: none;
+            background-color: #766e6d;
+            color: #ffffff;
             box-sizing: border-box;
-            padding: 10px 20px;
-        }
-
-        .service {
-            width: 12.5%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service h3,
-        .help h3 {
-            color: #423838;
             font-family: "NotoSerifTC-Bold";
-            font-size: 18px;
-            padding: 15px 15px 15px 0px;
         }
 
-        .service a,
-        .help a {
-            color: #423838;
-            font-family: "NotoSerifTC-Regular";
-            text-decoration: none;
-            font-size: 15px;
-            padding: 10px 0px;
-        }
-
-        .help {
-            width: 12.5%;
-            display: flex;
-            flex-direction: column
-        }
-
-        .peoplesaid {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .peoplesaid_wrap {
-            display: flex;
-            align-items: center;
-            width: 80%;
-        }
-
-        .peoplesaid h2 {
-            color: #423838;
-            font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
-            padding: 15px;
-        }
-
-        .peoplesaid p {
-            color: #423838;
-            font-family: "NotoSerifTC-Regular";
-            font-size: 20px;
-            padding: 15px;
-            text-align: center;
-            line-height: 30px;
-        }
-
-        .peoplesaid h3 {
-            color: #423838;
-            font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
-            padding: 15px;
-        }
-
-        .right_line {
-            width: 20%;
-            height: 1px;
-            margin-top: 9px;
-            border-top: solid #423838 1px;
-            flex-grow: 1;
-        }
-
-        .left_line {
-            width: 20%;
-            height: 1px;
-            margin-top: 9px;
-            border-top: solid #423838 1px;
-            flex-grow: 1;
-        }
-
-        .focusus {
-            width: 25%;
-        }
-
-        .focusus h3 {
-            color: #423838;
-            font-family: "NotoSerifTC-Bold";
-            font-size: 18px;
-            padding: 15px 15px 15px 0px;
-        }
-
-        .focusus a img {
-            width: 25px;
-            height: 25px;
-            padding-right: 10px;
-        }
-
-        .copyright {
-            background-color: rgb(77, 77, 77);
-        }
-
-        .copyright_wrap {
-            width: 1200px;
-            margin: auto;
-            padding: 5px 20px;
-            box-sizing: border-box;
-        }
-
-        .copyright_wrap p {
-            font-size: 14px;
-            font-family: "NotoSerifTC-Light";
-            color: #e0e0e0;
-        }
-
+        /*內容*/
         .container {
-            width: 1200px;
-            padding: 20px;
             box-sizing: border-box;
             margin: auto;
             display: flex;
@@ -332,11 +138,7 @@
         }
 
         .item {
-            box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
-            border-radius: 5px;
-            width: 48.275862%;
             box-sizing: border-box;
-            margin: 10px;
             display: flex;
             align-items: center;
         }
@@ -344,29 +146,20 @@
         .item .img {
             width: 50%;
             overflow: hidden;
-
         }
 
         .item .img img {
-            border-radius: 5px;
             width: 100%;
         }
 
         .item .info {
-            border-radius: 5px;
-            width: 49.137931%;
-            margin: 5px;
             display: flex;
             flex-direction: column
         }
 
         .page {
-            width: 1200px;
-            background: #9093AB;
-            border-radius: 10px;
-            padding: 15px;
+            background: #766e6d;
             margin: auto;
-            margin-top: 10px;
             display: flex;
             justify-content: center;
         }
@@ -377,11 +170,8 @@
 
         .page a {
             color: #ffffff;
-            padding: 0px 5px;
             font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
             position: relative;
-            left: 33px;
         }
 
         .page a:nth-child(1),
@@ -390,76 +180,48 @@
         .page a:nth-child(8) {
             color: black;
             background-color: #ffffff;
-            border-radius: 5px;
-            margin: 0px 5px;
-        }
-
-        .page a:nth-child(3) {
-            border-bottom: #ffffff solid 1px;
-            margin: 0px 5px;
         }
 
         .info h2 {
-            padding: 10px;
             box-sizing: border-box;
             color: #766e6d;
             font-family: "NotoSerifTC-Bold";
-            font-size: 20px;
             flex-grow: 1;
         }
 
         .label {
             display: flex;
-            padding: 10px;
             box-sizing: border-box;
         }
 
         .label .category {
             background-color: #9093AB;
-            padding: 5px;
             box-sizing: border-box;
-            border-radius: 5px;
             color: #ffffff;
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
-            margin-right: 5px;
         }
 
         .label .deadline {
             background-color: #9093AB;
-            padding: 5px;
             box-sizing: border-box;
-            border-radius: 5px;
             color: #ffffff;
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
-            margin-right: 5px;
         }
 
         .label .charity {
             background-color: #DBCF93;
-            padding: 5px;
             box-sizing: border-box;
-            border-radius: 5px;
             color: #ffffff;
             font-family: "NotoSerifTC-Regular";
-            font-size: 18px;
         }
 
         .txt {
-            padding: 10px;
             box-sizing: border-box;
             color: #000000;
             font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
-        }
-
-        .txt p:nth-child(1) {
-            padding-bottom: 5px;
         }
 
         .function {
-            padding: 10px;
             box-sizing: border-box;
             display: flex;
             justify-content: flex-end;
@@ -470,19 +232,10 @@
             display: flex;
         }
 
-        .fire img,
-        .collection img {
-            width: 30px;
-            height: 30px;
-            padding-left: 10px;
-        }
-
         .fire p,
         .collection p {
             color: #000000;
             font-family: "NotoSerifTC-Regular";
-            font-size: 16px;
-            padding-left: 5px;
             display: flex;
             align-items: flex-end;
         }
@@ -491,13 +244,84 @@
             display: flex;
         }
 
-        .item:hover>.img img {
-            transform: scale(1.05);
-            transition: 0.5s;
+        /*footer*/
+        .footer {
+            background-image: url(pic/bgimgblack.jpg);
+            background-size: cover;
         }
 
-        .collection:hover>a img {
-            filter: invert(43%) sepia(12%) saturate(3012%) hue-rotate(314deg) brightness(84%) contrast(109%);
+        .footer_wrap {
+            display: flex;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service h3,
+        .help h3 {
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
+        }
+
+        .service a,
+        .help a {
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
+            text-decoration: none;
+        }
+
+        .help {
+            flex-direction: column
+        }
+
+        .peoplesaid {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .peoplesaid_wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .peoplesaid h2 {
+            color: #ffffff;
+            font-family: "NotoSerifTC-Bold";
+        }
+
+        .peoplesaid p {
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
+        }
+
+        .peoplesaid h3 {
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
+        }
+
+        .focusus h3 {
+            color: #ffffff;
+            font-family: "NotoSerifTC-Regular";
+        }
+
+        .copyright {
+            background-color: rgb(77, 77, 77);
+        }
+
+        .copyright_wrap {
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        .copyright_wrap p {
+            font-family: "NotoSerifTC-Light";
+            color: #e0e0e0;
         }
 
         select:hover {
@@ -511,16 +335,29 @@
         <div class="header_wrap">
             <a href="index.html"><img src="pic/pyv-logo.png" alt="pyv">
             </a>
-            <nav>
-                <ul>
-                    <li><a href="hot.html">熱門模型</a></li>
-                    <li><a href="classification.html">模型分類</a></li>
-                    <li><a href="rank.html">作者排名</a></li>
-                    <li><a href="c2c.html">挑戰X需求</a></li>
-                    <li><a href="aboutus.html">關於我們</a></li>
-                </ul>
-            </nav>
-            <div class="user_related">
+            <div class="header_wrap_grow" id="header_wrap_grow">
+                <nav>
+                    <ul>
+                        <li><a href="hot.html">熱門模型</a></li>
+                        <li><a href="classification.html">模型分類</a></li>
+                        <li><a href="rank.html">作者排名</a></li>
+                        <li><a href="c2c.html">挑戰X需求</a></li>
+                        <li><a href="aboutus.html">關於我們</a></li>
+                    </ul>
+                </nav>
+                <div class="search" id="search">
+                    <div class="search_wrap">
+                        <input type="search" class="search_text" id="navSearchtxt" placeholder="搜尋美好的模型">
+                        <select id="navSearch">
+                            <option value="1">搜模型</option>
+                            <option value="2">搜作者</option>
+                            <option value="3">搜挑戰</option>
+                        </select>
+                        <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="user_related" id="user_related">
                 <ul>
                     <li><a href="#">會員</a></li>
                     <li><a href="#">發布作品</a></li>
@@ -528,6 +365,24 @@
                     <li><a href="#">聯絡我們</a></li>
                 </ul>
                 <hr>
+            </div>
+            <div class="search" id="searchTop">
+                <div class="search_wrap">
+                    <input type="search" class="search_text" id="navSearchtxtMini" placeholder="搜尋模型">
+                    <select id="navSearchMini">
+                        <option value="1">搜模型</option>
+                        <option value="2">搜作者</option>
+                        <option value="3">搜挑戰</option>
+                    </select>
+                    <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                </div>
+            </div>
+            <div class="hamburger_wrap" id="hamburger">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>
@@ -538,11 +393,11 @@
                 <div class="banner_title_wrap">
                     <div class="search">
                         <div class="search_wrap">
-                            <input type="text" class="search_text" placeholder="挑戰你的創作力">
-                            <select>
-                                <option>搜挑戰</option>
-                                <option>搜模型</option>
-                                <option>搜作者</option>
+                            <input type="text" id="bannerSearchtxt" class="search_text" placeholder="挑戰你的創作力">
+                            <select id="bannerSearch">
+                                <option value="3">搜挑戰</option>
+                                <option value="1">搜模型</option>
+                                <option value="2">搜作者</option>
                             </select>
                             <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
                             <div class="needs">
@@ -766,7 +621,7 @@
                 <a href="#">熱門模型</a>
                 <a href="#">模型分類</a>
                 <a href="#">作者排名</a>
-                <a href="#">代課鍵模與代印</a>
+                <a href="#">需求X挑戰</a>
                 <a href="#">關於我們</a>
             </div>
             <div class="help">
@@ -797,6 +652,109 @@
             <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
         </div>
     </div>
+    <script>
+        function appearSearch() {
+            if (document.body.clientWidth >= 1200) {
+                document.getElementById("searchTop").className = "search";
+                if (document.documentElement.scrollTop > 400) {
+                    document.getElementById("search").className = "appear";
+                }
+
+                if (document.documentElement.scrollTop < 400) {
+                    document.getElementById("search").className = "search";
+                }
+            }
+            if (document.body.clientWidth > 1024 && document.body.clientWidth < 1200) {
+                document.getElementById("searchTop").className = "search";
+                if (document.documentElement.scrollTop > 350) {
+                    document.getElementById("search").className = "appear";
+                }
+
+                if (document.documentElement.scrollTop < 350) {
+                    document.getElementById("search").className = "search";
+                }
+            }
+            if (document.body.clientWidth >= 767 && document.body.clientWidth <= 1024) {
+                if (document.documentElement.scrollTop > 150) {
+                    document.getElementById("searchTop").className = "appear";
+                }
+                if (document.documentElement.scrollTop < 150) {
+                    document.getElementById("searchTop").className = "search";
+                }
+            }
+
+            if (document.body.clientWidth <= 767) {
+                if (document.documentElement.scrollTop > 250) {
+                    document.getElementById("searchTop").className = "appear";
+                }
+                if (document.documentElement.scrollTop < 250) {
+                    document.getElementById("searchTop").className = "search";
+                }
+            }
+        };
+        window.addEventListener("scroll", appearSearch, false);
+
+        $(document).ready(function () {
+            $("#navSearch").on("change", function () {
+                let option = $("#navSearch").val();
+                if (option == "1") {
+                    $("#navSearchtxt").attr("placeholder", "搜尋世上最美好的模型");
+                }
+                if (option == "2") {
+                    $("#navSearchtxt").attr("placeholder", "搜尋作者");
+                }
+                if (option == "3") {
+                    $("#navSearchtxt").attr("placeholder", "挑戰你的創造力");
+                }
+
+            });
+            $("#navSearchMini").on("change", function () {
+                let option = $("#navSearchMini").val();
+                if (option == "1") {
+                    $("#navSearchtxtMini").attr("placeholder", "搜尋模型");
+                }
+                if (option == "2") {
+                    $("#navSearchtxtMini").attr("placeholder", "搜尋作者");
+                }
+                if (option == "3") {
+                    $("#navSearchtxtMini").attr("placeholder", "挑戰自己");
+                }
+
+            });
+            $("#bannerSearch").on("change", function () {
+                let option = $("#bannerSearch").val();
+                if (option == "1") {
+                    $("#bannerSearchtxt").attr("placeholder", "搜尋世上最美好的模型");
+                }
+                if (option == "2") {
+                    $("#bannerSearchtxt").attr("placeholder", "搜尋作者");
+                }
+                if (option == "3") {
+                    $("#bannerSearchtxt").attr("placeholder", "挑戰你的創造力");
+                }
+
+            });
+
+            $("#hamburger").click(function () {
+                let left = $(".header_wrap_grow").position().left;
+                if (left < 0) {
+                    $("#header_wrap_grow").animate({
+                        left: '0%',
+                    }, 500);
+                    $("#user_related").animate({
+                        left: '0%',
+                    }, 500);
+                } else {
+                    $("#header_wrap_grow").animate({
+                        left: "-51%",
+                    }, 500);
+                    $("#user_related").animate({
+                        left: "-51%",
+                    }, 500);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

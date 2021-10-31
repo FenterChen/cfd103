@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="font/font.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <style>
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes passoff {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
         .header {
             position: fixed;
             z-index: 10;
