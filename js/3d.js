@@ -39,8 +39,6 @@ function init() {
             mesh = gltf.scene;
             mesh.scale.set(0.2, 0.2, 0.2);
             scene.add(mesh);
-            animate();
-
         },
         function (xhr) {
 
@@ -73,8 +71,8 @@ function onMouseDown(event) {
 function onMouseMove(event) {
     if (isMouseDown) {
         if (mesh) {
-            mesh.rotation.y = getMouseX(event) / 100;
-            mesh.rotation.x = getMouseY(event) / 100;
+            mesh.rotation.y = getMouseX(event) / 200;
+            mesh.rotation.x = getMouseY(event) / 200;
 
         }
     }
@@ -88,14 +86,14 @@ function getMouseX(event) {
     if (event.type.indexOf("touch") == -1)
         return event.clientX;
     else
-        return event.touches[0].clientX;
+        return event.touches[0].clientX / 200;
 }
 
 function getMouseY(event) {
     if (event.type.indexOf("touch") == -1)
         return event.clientY;
     else
-        return event.touches[0].clientY;
+        return event.touches[0].clientY / 200;
 }
 
 window.addEventListener('DOMContentLoaded', init);

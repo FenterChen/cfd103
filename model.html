@@ -9,22 +9,12 @@
     <link rel="shortcut icon" href="pic/pyv-favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="font/font.css">
+    <link rel="stylesheet" href="css/grid-search.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
     <style>
-        .user_related ul {
-            display: flex;
-        }
-
-        .user_related a {
-            font-size: 14px;
-            font-family: "NotoSerifTC-Light";
-            color: #888888;
-            text-decoration: none;
-            margin: 0px 5px;
-        }
-
         .header {
             position: fixed;
-            z-index: 2;
+            z-index: 10;
             top: 0;
             left: 0;
             width: 100%;
@@ -32,90 +22,17 @@
 
         .header_wrap {
             display: flex;
-            padding: 10px 30px;
+            align-items: center;
             background-image: url(pic/header-bgimg.png);
             background-size: cover;
             border-bottom: #afafaf 3px solid;
         }
 
-        .header_wrap>a {
-            width: 95px;
-        }
-
-        .header_wrap img {
-            width: 100%;
-        }
-
-        .header_wrap nav {
-            display: flex;
-        }
-
-        .header_wrap nav ul {
-            display: flex;
-            align-items: center;
-            padding-left: 30px;
-        }
-
-        .header_wrap nav ul a {
-            font-size: 18px;
+        .header_wrap_grow a,
+        .user_related a {
             text-decoration: none;
-            font-family: "NotoSerifTC-Regular";
-            text-shadow: 0.05em 0.05em #cac9c9;
-            color: #423838;
-            padding: 0px 10px;
         }
 
-        .header .search {
-            width: 21%;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 7px 0.3px #423838;
-            -webkit-box-shadow: 0px 0px 7px 0.3px #423838;
-            -moz-box-shadow: 0px 0px 7px 0.3px #423838;
-            -o-box-shadow: 0px 0px 7px 0.3px #423838;
-        }
-
-        .header .search_wrap {
-            display: flex;
-            padding: 3px 5px;
-        }
-
-        .header .search_img {
-            max-width: 10%;
-            padding: 5px;
-            border: none;
-            background-color: #ffffff;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-
-        .header .search img {
-            width: 100%;
-        }
-
-        .header .search_text {
-            width: 100%;
-            flex-grow: 1;
-            font-size: 16px;
-            font-family: "NotoSerifTC-Bold";
-            color: #766e6d;
-            border: none;
-            outline: none;
-        }
-
-        .header .search select {
-            background-color: #e0e0e0;
-            border: #e0e0e0 1px solid;
-            border-radius: 6px;
-            font-size: 14px;
-            font-family: "NotoSerifTC-Regular";
-            outline: none;
-            padding: 0px 5px;
-            margin: 0px 5px;
-        }
 
         .modelpart {
             background-image: url(pic/bgimg.jpg);
@@ -127,7 +44,7 @@
             margin: auto;
             display: flex;
             box-sizing: border-box;
-            padding: 100px 20px 0px 20px;
+            padding: 100px 20px 40px 20px;
         }
 
         .model_set {
@@ -229,55 +146,6 @@
             border: solid 2px #766e6d;
         }
 
-        .model_img_attached .arrow_before {
-            width: 45px;
-            height: 45px;
-            opacity: 0.3;
-            background-color: #423838;
-            border-radius: 50%;
-            position: absolute;
-            z-index: 1;
-            top: 35%;
-            left: 0%;
-        }
-
-        .model_img_attached .arrow_before p {
-            font-size: 45px;
-            font-weight: bold;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #ffffff;
-        }
-
-        .model_img_attached .arrow_after {
-            width: 45px;
-            height: 45px;
-            background-color: #423838;
-            opacity: 0.3;
-            border-radius: 50%;
-            position: absolute;
-            z-index: 1;
-            top: 35%;
-            right: 0%;
-        }
-
-        .model_img_attached .arrow_after p {
-            font-size: 45px;
-            font-weight: bold;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #ffffff;
-        }
-
-        .model_img_attached .arrow_before:hover,
-        .model_img_attached .arrow_after:hover {
-            opacity: 1;
-        }
-
         .model_function {
             width: 20%;
             margin-left: 10px;
@@ -344,7 +212,6 @@
 
         .model_description {
             margin: auto;
-            margin-top: 20px;
             padding: 20px;
             box-sizing: border-box;
             background-color: #fff;
@@ -380,9 +247,8 @@
         }
 
         .model_comment_wrap {
-            width: 1160px;
             margin: auto;
-            padding: 20px 0px 20px 0px;
+            margin: 0px 20px 0px 20px;
             box-sizing: border-box;
         }
 
@@ -454,7 +320,7 @@
             text-decoration: none;
         }
 
-
+        /*
         .footer {
             background-image: url(pic/bgimg.jpg);
             background-size: cover;
@@ -588,6 +454,7 @@
         select:hover {
             cursor: pointer;
         }
+        */
     </style>
 </head>
 
@@ -596,27 +463,29 @@
         <div class="header_wrap">
             <a href="index.html"><img src="pic/pyv-logo.png" alt="pyv">
             </a>
-            <nav>
-                <ul>
-                    <li><a href="hot.html">熱門模型</a></li>
-                    <li><a href="classification.html">模型分類</a></li>
-                    <li><a href="rank.html">作者排名</a></li>
-                    <li><a href="c2c.html">挑戰X需求</a></li>
-                    <li><a href="aboutus.html">關於我們</a></li>
-                </ul>
-            </nav>
-            <div class="search">
-                <div class="search_wrap">
-                    <input type="text" class="search_text" placeholder="搜尋美好的模型">
-                    <select>
-                        <option>搜模型</option>
-                        <option>搜作者</option>
-                        <option>搜挑戰</option>
-                    </select>
-                    <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+            <div class="header_wrap_grow" id="header_wrap_grow">
+                <nav>
+                    <ul>
+                        <li><a href="hot.html">熱門模型</a></li>
+                        <li><a href="classification.html">模型分類</a></li>
+                        <li><a href="rank.html">作者排名</a></li>
+                        <li><a href="c2c.html">挑戰X需求</a></li>
+                        <li><a href="aboutus.html">關於我們</a></li>
+                    </ul>
+                </nav>
+                <div class="search" id="search">
+                    <div class="search_wrap">
+                        <input type="search" class="search_text" id="navSearchtxt" placeholder="搜尋美好的模型">
+                        <select id="navSearch">
+                            <option value="1">搜模型</option>
+                            <option value="2">搜作者</option>
+                            <option value="3">搜挑戰</option>
+                        </select>
+                        <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                    </div>
                 </div>
             </div>
-            <div class="user_related">
+            <div class="user_related" id="user_related">
                 <ul>
                     <li><a href="#">會員</a></li>
                     <li><a href="#">發布作品</a></li>
@@ -624,6 +493,24 @@
                     <li><a href="#">聯絡我們</a></li>
                 </ul>
                 <hr>
+            </div>
+            <div class="search" id="searchTop">
+                <div class="search_wrap">
+                    <input type="search" class="search_text" id="navSearchtxtMini" placeholder="搜尋模型">
+                    <select id="navSearchMini">
+                        <option value="1">搜模型</option>
+                        <option value="2">搜作者</option>
+                        <option value="3">搜挑戰</option>
+                    </select>
+                    <button class="search_img"><a href="#"><img src="pic/searchicon.png"></a></button>
+                </div>
+            </div>
+            <div class="hamburger_wrap" id="hamburger">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>
@@ -640,21 +527,11 @@
 
                 <div class="model_img">
                     <div class="scence"><a href="3d.html"><img src="pic/cube.png"></a></div>
-                    <img src="pic/IronMan.jpg">
+                    <img id="large" src="pic/IronMan-1.jpg">
                 </div>
                 <div class="model_img_attached">
-                    <a href="#">
-                        <div class="arrow_before">
-                            <p>&lt;</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="arrow_after">
-                            <p>&gt;</p>
-                        </div>
-                    </a>
-                    <ul>
-                        <li><img src="pic/IronMan.jpg"></li>
+                    <ul class="small">
+                        <li><img src="pic/IronMan-1.jpg"></li>
                         <li><img src="pic/IronMan-2.jpg"></li>
                         <li><img src="pic/IronMan-3.jpg"></li>
                         <li><img src="pic/IronMan-4.jpg"></li>
@@ -674,6 +551,51 @@
                     <p>增加了了可選的眼睛（可調光）。<br>現在有 2 個 PDF 說明。 一種是帶眼睛的頭盔，一種是沒有的。</p>
                     <br>
                     <p>這個模型是易於易於列印，易於構建。<br>其中我們提供包括零件清單、接線圖和運行的 Arduino 代碼。<br>隨附調整大小和組裝說明</p>
+                </div>
+                <div class="model_comment">
+                    <h2>請<a href="#">登入</a>後再發表評論</h2>
+                    <div class="model_comment_wrap">
+                        <div class="comment">
+                            <div class="member_info">
+                                <div class="member_img"><a href="author.html"><img src="pic/author3.PNG"></a></div>
+                                <div class="info">
+                                    <h2>JOSH-DC</h2>
+                                    <p>2020/12/21</p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <p>很棒的模型，設計得很精準。</p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="member_info">
+                                </a>
+                                <div class="member_img"><a href="author.html"><img src="pic/author6.PNG"></a></div>
+                                <div class="info">
+                                    <h2>3DPropz</h2>
+                                    <p>2020/12/10</p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <p>看起來相當準確的模型，感謝分享!</p>
+                            </div>
+                            <div class="replies"><a href="#">
+                                    <h3>2則回覆</h3>
+                                </a></div>
+                        </div>
+                        <div class="comment">
+                            <div class="member_info">
+                                <div class="member_img"><a href="author.html"><img src="pic/author2.PNG"></a></div>
+                                <div class="info">
+                                    <h2>Mave3Dprints</h2>
+                                    <p>2020/11/25</p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <p>看起來超讚，迫不及待印出成品了!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="model_function">
@@ -719,52 +641,8 @@
                 </div>
             </div>
         </div>
-        <div class="model_comment">
-            <h2>請<a href="#">登入</a>後再發表評論</h2>
-            <div class="model_comment_wrap">
-                <div class="comment">
-                    <div class="member_info">
-                        <div class="member_img"><a href="author.html"><img src="pic/author3.PNG"></a></div>
-                        <div class="info">
-                            <h2>JOSH-DC</h2>
-                            <p>2020/12/21</p>
-                        </div>
-                    </div>
-                    <div class="txt">
-                        <p>很棒的模型，設計得很精準。</p>
-                    </div>
-                </div>
-                <div class="comment">
-                    <div class="member_info">
-                        </a>
-                        <div class="member_img"><a href="author.html"><img src="pic/author6.PNG"></a></div>
-                        <div class="info">
-                            <h2>3DPropz</h2>
-                            <p>2020/12/10</p>
-                        </div>
-                    </div>
-                    <div class="txt">
-                        <p>看起來相當準確的模型，感謝分享!</p>
-                    </div>
-                    <div class="replies"><a href="#">
-                            <h3>2則回覆</h3>
-                        </a></div>
-                </div>
-                <div class="comment">
-                    <div class="member_info">
-                        <div class="member_img"><a href="author.html"><img src="pic/author2.PNG"></a></div>
-                        <div class="info">
-                            <h2>Mave3Dprints</h2>
-                            <p>2020/11/25</p>
-                        </div>
-                    </div>
-                    <div class="txt">
-                        <p>看起來超讚，迫不及待印出成品了!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
+    <!--
     <div class="footer">
         <div class="footer_wrap">
             <div class="service">
@@ -802,7 +680,68 @@
         <div class="copyright_wrap">
             <p>Copyright © 2021 PYV Co. 保留所有權利。</p>
         </div>
-    </div>
+    </div> -->
+
+    <script>
+        $(document).ready(function () {
+            $("#hamburger").click(function () {
+                let left = $(".header_wrap_grow").position().left;
+                if (left < 0) {
+                    $("#header_wrap_grow").animate({
+                        left: '0%',
+                    }, 1000);
+                    $("#user_related").animate({
+                        left: '0%',
+                    }, 1000);
+                } else {
+                    $("#header_wrap_grow").animate({
+                        left: "-51%",
+                    }, 1000);
+                    $("#user_related").animate({
+                        left: "-51%",
+                    }, 1000);
+                }
+            });
+            $("#navSearch").on("change", function () {
+                let option = $("#navSearch").val();
+                if (option == "1") {
+                    $("#navSearchtxt").attr("placeholder", "搜尋世上最美好的模型");
+                }
+                if (option == "2") {
+                    $("#navSearchtxt").attr("placeholder", "搜尋作者");
+                }
+                if (option == "3") {
+                    $("#navSearchtxt").attr("placeholder", "挑戰你的創造力");
+                }
+            });
+            $("#navSearchMini").on("change", function () {
+                let option = $("#navSearchMini").val();
+                if (option == "1") {
+                    $("#navSearchtxtMini").attr("placeholder", "搜尋模型");
+                }
+                if (option == "2") {
+                    $("#navSearchtxtMini").attr("placeholder", "搜尋作者");
+                }
+                if (option == "3") {
+                    $("#navSearchtxtMini").attr("placeholder", "挑戰自己");
+                }
+
+            });
+        });
+        function showLarge(e) {
+            let small = e.target;
+            document.getElementById("large").src = small.src.replace("", "");
+        }
+
+        function init() {
+            let smalls = document.querySelectorAll(".small img");
+            for (let i = 0; i < smalls.length; i++) {
+                smalls[i].onclick = showLarge;
+            }
+        }
+
+        window.addEventListener("load", init, false);
+    </script>
 </body>
 
 </html>
