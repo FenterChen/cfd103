@@ -831,6 +831,7 @@
         }
     
         .banner_title_wrap .needs {
+            display: flex;
             height: 100%;
             right: -100px;
             top: -1px;
@@ -1153,6 +1154,7 @@
 }
 
 .banner_title_wrap .needs {
+    display: flex;
     height: 100%;
     right: -100px;
     top: -1px;
@@ -1593,6 +1595,7 @@
     }
 
     .banner_title_wrap .needs {
+        display: flex;
         height: 100%;
         right: -100px;
         top: -1px;
