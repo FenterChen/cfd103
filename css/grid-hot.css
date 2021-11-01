@@ -393,7 +393,6 @@
 /*footer*/
 .footer {
     clip-path: polygon(0 5%, 50% 15%, 100% 5%, 100% 100%, 0 100%);
-    margin-top: -10px;
 }
 
 .footer_wrap {
@@ -1161,7 +1160,7 @@
 .allwrap .item {
     box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
     border-radius: 5px;
-    width: 23.305084%;
+    width: calc(50% - 20px);
     box-sizing: border-box;
     margin: 10px 10px 0px 10px;
     display: flex;
@@ -1585,7 +1584,7 @@
 .allwrap .item {
     box-shadow: 0px 0px 5px 5px rgba(66, 56, 56, 0.1);
     border-radius: 5px;
-    width: 23.305084%;
+    width: calc(25% - 20px);
     box-sizing: border-box;
     margin: 10px 10px 0px 10px;
     display: flex;
@@ -1644,6 +1643,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .allwrap .item_collection:hover>img {
